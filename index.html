@@ -41,10 +41,18 @@ nav{position:fixed;top:34px;left:0;right:0;z-index:100;height:74px;display:flex;
 .hamburger span{display:block;width:22px;height:1.5px;background:var(--text2)}
 
 /* HERO */
-#hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:108px}
-.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1770836037289-e00e5f351d11?auto=format&fit=crop&w=1800&q=80') center/cover}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,36,32,.55) 0%,rgba(43,36,32,.72) 100%)}
+#hero{padding-top:108px;background:linear-gradient(180deg,var(--blush) 0%,var(--cream) 100%)}
+.hero-boutique{max-width:640px;margin:0 auto;padding:4.5rem 2rem 2rem;text-align:center}
+.hero-boutique .hero-eyebrow{color:var(--charcoal);justify-content:center}
+.hero-boutique .hero-eyebrow::before,.hero-boutique .hero-eyebrow::after{background:var(--gold)}
+.hero-boutique h1.hero-title{color:var(--charcoal)}
+.hero-boutique .hero-sub{color:var(--text2);margin:0 auto 2.25rem}
+.hero-boutique .btn-s{color:var(--charcoal);border-color:var(--border)}
+.hero-boutique .btn-s:hover{border-color:var(--charcoal);background:rgba(74,92,79,.06)}
+.hero-photo-wrap{max-width:620px;margin:0 auto;padding:0 2rem 5rem}
+.hero-photo-card{aspect-ratio:16/9;border-radius:28px;background:url('https://images.unsplash.com/photo-1770836037289-e00e5f351d11?auto=format&fit=crop&w=1200&q=80') center/cover;box-shadow:0 30px 60px rgba(74,92,79,.22)}
 .hero-inner{max-width:800px;margin:0 auto;padding:4rem 2rem;text-align:center;position:relative;z-index:1;color:#fff}
+@media(max-width:900px){.hero-boutique{padding:3rem 1.5rem 1.5rem}.hero-photo-wrap{padding:0 1.5rem 3rem}.hero-photo-card{aspect-ratio:4/3}}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);margin-bottom:1.75rem}
 .hero-eyebrow::before,.hero-eyebrow::after{content:'';width:24px;height:1px;background:var(--gold2)}
 h1.hero-title{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:700;line-height:1.1;margin-bottom:1.5rem;letter-spacing:-.5px}
@@ -160,16 +168,17 @@ footer{background:var(--charcoal);padding:3rem 2rem;text-align:center}
 </nav>
 
 <section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-inner">
+  <div class="hero-boutique">
     <div class="hero-eyebrow">Ostéopathie animale · Rennes</div>
     <h1 class="hero-title">Le bien-être animal,<br/>une priorité.</h1>
     <p class="hero-sub">Consultations d'ostéopathie pour chiens, chats, chevaux et NAC, au cabinet ou à domicile, à Rennes et environs.</p>
-    <div class="hero-btns">
+    <div class="hero-btns" style="justify-content:center">
       <a href="tel:+33299000000" class="btn-p">Prendre rendez-vous →</a>
       <a href="#prestations" class="btn-s">Voir nos prestations</a>
     </div>
+  </div>
+  <div class="hero-photo-wrap">
+    <div class="hero-photo-card"></div>
   </div>
 </section>
 
