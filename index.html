@@ -8,13 +8,15 @@
 <meta name="robots" content="noindex,nofollow"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
 <script>try{var t=localStorage.getItem("ns-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <style>
 /* ---------------------------------------------------------------
-   Paille, bois, et un vert de sauge. Ni le bleu clinique
-   vétérinaire, ni le pastel attendrissant : le calme d'une
-   grange en fin de journée.
+   La page est batie sur une opposition : ce qui releve de
+   l'osteopathe, ce qui releve du veterinaire. Deux colonnes
+   affrontees au centre de la page, le reste en frise verticale
+   avec les horaires en marge.
+   Paille, bois, vert de sauge : ni bleu clinique, ni pastel.
    --------------------------------------------------------------- */
 :root{
   --paille:#EFEAE1;
@@ -33,42 +35,42 @@
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
     --paille:#231E19;
-    --creme:#2C2621;
+    --creme:#2B251F;
     --bois:#EFEAE1;
-    --bois-doux:#CDC6BB;
-    --taupe:#9A9184;
-    --trait:#3F382F;
+    --bois-doux:#D2CABD;
+    --taupe:#9C9385;
+    --trait:#3C352D;
     --sauge:#8FB99E;
-    --sauge-vif:#A6CCB3;
-    --sur-sombre:#2C2621;
-    --sur-sombre-doux:#544C42;
-    --sur-sombre-accent:#35513F;
+    --sauge-vif:#A6CDB3;
+    --sur-sombre:#2B251F;
+    --sur-sombre-doux:#5A5147;
+    --sur-sombre-accent:#2E4A39;
     --focus:#8FB99E;
   }
 }
 :root[data-theme="dark"]{
   --paille:#231E19;
-  --creme:#2C2621;
+  --creme:#2B251F;
   --bois:#EFEAE1;
-  --bois-doux:#CDC6BB;
-  --taupe:#9A9184;
-  --trait:#3F382F;
+  --bois-doux:#D2CABD;
+  --taupe:#9C9385;
+  --trait:#3C352D;
   --sauge:#8FB99E;
-  --sauge-vif:#A6CCB3;
-  --sur-sombre:#2C2621;
-  --sur-sombre-doux:#544C42;
-  --sur-sombre-accent:#35513F;
+  --sauge-vif:#A6CDB3;
+  --sur-sombre:#2B251F;
+  --sur-sombre-doux:#5A5147;
+  --sur-sombre-accent:#2E4A39;
   --focus:#8FB99E;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:3.6rem}
-body{background:var(--paille);color:var(--bois-doux);font-family:'Public Sans',system-ui,sans-serif;font-size:16.5px;line-height:1.64;-webkit-font-smoothing:antialiased}
-h1,h2,h3,.nr{font-family:'Newsreader',Georgia,serif;color:var(--bois);font-weight:500}
+body{background:var(--paille);color:var(--bois-doux);font-family:'Public Sans',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Newsreader',Georgia,serif;color:var(--bois);font-weight:500;letter-spacing:-.005em}
 a{color:var(--sauge)}
 :focus-visible{outline:2px solid var(--focus);outline-offset:3px}
 img{max-width:100%;display:block}
-.env{max-width:1000px;margin:0 auto;padding-inline:1.5rem}
+.env{max-width:1060px;margin:0 auto;padding-inline:1.5rem}
 
 .demo{background:var(--bois);color:var(--sur-sombre);padding:.5rem 1rem;text-align:center;font-size:.74rem}
 .demo a{color:var(--sur-sombre-accent);font-weight:600}
@@ -76,103 +78,115 @@ img{max-width:100%;display:block}
 
 .barre{position:sticky;top:0;z-index:20;background:var(--paille);border-bottom:1px solid var(--trait)}
 .b-in{display:flex;align-items:center;gap:1.5rem;min-height:3.05rem}
-.b-marque{font-family:'Newsreader',serif;font-weight:500;font-size:1.16rem;color:var(--bois);text-decoration:none;flex-shrink:0}
+.b-marque{font-family:'Newsreader',serif;font-weight:600;font-size:1.12rem;color:var(--bois);text-decoration:none;flex-shrink:0}
 .b-liens{display:flex;gap:1.4rem;margin-left:auto}
 .b-liens a{font-size:.82rem;font-weight:500;color:var(--bois-doux);text-decoration:none;padding-block:.2rem;border-bottom:2px solid transparent}
 .b-liens a:hover{color:var(--bois);border-bottom-color:var(--sauge)}
-.b-tel{font-size:.85rem;font-weight:600;background:var(--sauge);color:var(--creme);text-decoration:none;padding:.45rem 1rem;flex-shrink:0;white-space:nowrap;border-radius:3px}
+.b-tel{font-size:.84rem;font-weight:600;background:var(--sauge);color:var(--creme);text-decoration:none;padding:.46rem 1rem;flex-shrink:0;white-space:nowrap;border-radius:3px}
 .b-tel:hover{background:var(--bois)}
 .b-court{display:none}
-@media(max-width:840px){.b-liens{display:none}.b-tel{margin-left:auto}.b-long{display:none}.b-court{display:inline}}
+@media(max-width:860px){.b-liens{display:none}.b-long{display:none}.b-court{display:inline}}
 
-header{padding-block:3rem 2.3rem;border-bottom:1px solid var(--trait)}
-.titre{font-size:clamp(2.2rem,5.6vw,3.5rem);line-height:1.08;letter-spacing:-.01em}
+/* --- affiche d'ouverture : photo pleine largeur, titre sur plaque --- */
+.affiche{position:relative}
+.affiche > img{width:100%;height:clamp(300px,46vw,520px);object-fit:cover;object-position:center 40%}
+.plaque{background:var(--paille);padding:2rem 2.4rem 1.8rem 0;max-width:40rem}
+@media(min-width:900px){
+  .affiche .env{position:absolute;left:0;right:0;bottom:0}
+  .plaque{margin-bottom:0}
+}
+.titre{font-size:clamp(1.9rem,4.2vw,3rem);line-height:1.1;font-weight:400}
 .titre em{font-style:italic;color:var(--sauge)}
-.accroche{margin-top:1rem;font-size:1.04rem;max-width:52ch}
-.ident{margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.3rem 1.5rem;font-size:.89rem}
-.ident b{color:var(--bois);font-weight:600}
+.sous-titre{margin-top:.9rem;max-width:46ch;font-size:1rem}
+.signature{border-top:1px solid var(--trait);margin-top:1.2rem;padding-top:.8rem;font-size:.86rem;color:var(--taupe)}
+.signature b{color:var(--bois);font-weight:600;font-family:'Newsreader',serif;font-size:1rem}
 
-.ouverture{padding-block:2.9rem;border-bottom:1px solid var(--trait);background:var(--creme)}
-.ouverture p{font-family:'Newsreader',serif;font-size:clamp(1.4rem,3.3vw,2rem);line-height:1.3;color:var(--bois);max-width:27ch}
-.ouverture .suite{font-family:'Public Sans',sans-serif;font-size:1rem;line-height:1.64;color:var(--bois-doux);max-width:58ch;margin-top:1.1rem}
+/* --- le chiffre qui ouvre --- */
+.aveu{border-block:1px solid var(--trait);padding-block:2.4rem;background:var(--creme)}
+.aveu .env{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr) minmax(0,3fr);gap:2.8rem;align-items:center}
+.aveu img{width:100%;height:clamp(150px,17vw,200px);object-fit:cover}
+.aveu h2{font-size:clamp(1.5rem,3.2vw,2.15rem);line-height:1.14}
+.aveu p{font-size:.98rem}
+@media(max-width:980px){.aveu .env{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:1.6rem 2.4rem}.aveu img{display:none}}
+@media(max-width:820px){.aveu .env{grid-template-columns:1fr;gap:1rem}}
 
-.sect{padding-block:3.3rem}
-.sect + .sect{border-top:1px solid var(--trait)}
-.etiq{font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--sauge);margin-bottom:.5rem}
-h2{font-size:clamp(1.75rem,4vw,2.4rem);line-height:1.1}
-.intro{margin-top:.6rem;max-width:58ch}
+/* --- la balance : deux colonnes affrontees --- */
+.balance{padding-block:3rem}
+.etiq{font-family:'Public Sans',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sauge)}
+h2{font-size:clamp(1.5rem,3.2vw,2.15rem);line-height:1.14;margin-top:.3rem}
+.chapeau{margin-top:.6rem;max-width:58ch;font-size:.98rem}
+.plateaux{margin-top:2rem;display:grid;grid-template-columns:1fr 1fr;gap:0}
+.cote{padding:0 2.4rem}
+.cote:first-child{padding-left:0;border-right:1px solid var(--trait)}
+.cote:last-child{padding-right:0}
+.c-tete{font-family:'Newsreader',serif;font-size:1.35rem;font-weight:600;color:var(--bois);padding-bottom:.55rem;border-bottom:3px solid var(--sauge)}
+.cote:last-child .c-tete{border-bottom-color:var(--taupe)}
+.c-quand{font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe);margin-top:.6rem}
+.c-liste{list-style:none;margin-top:.8rem}
+.c-liste li{font-size:.94rem;line-height:1.45;padding-block:.42rem;border-bottom:1px solid var(--trait)}
+.c-pied{margin-top:.9rem;font-size:.9rem;color:var(--taupe);font-style:italic}
+.ensemble{margin-top:2rem;padding:1.1rem 1.3rem;background:var(--creme);border-left:3px solid var(--sauge);font-size:.95rem;max-width:74ch}
+@media(max-width:760px){
+  .plateaux{grid-template-columns:1fr;gap:2rem}
+  .cote{padding:0}
+  .cote:first-child{border-right:0;border-bottom:1px solid var(--trait);padding-bottom:1.6rem}
+}
 
-/* --- la limite --- */
-.limite{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:2.1rem;border:1px solid var(--trait)}
-.col{padding:1.6rem 1.5rem}
-.col + .col{border-left:1px solid var(--trait)}
-.col.vet{background:var(--creme)}
-.c-tit{font-family:'Newsreader',serif;font-size:1.42rem;color:var(--bois);line-height:1.15}
-.c-sous{font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-top:.4rem}
-.col.moi .c-sous{color:var(--sauge)}
-.col.vet .c-sous{color:var(--taupe)}
-.col ul{list-style:none;margin-top:1rem}
-.col li{padding-left:1.35rem;position:relative;margin-bottom:.5rem;font-size:.96rem}
-.col.moi li::before{content:'';position:absolute;left:0;top:.62em;width:.65rem;height:2px;background:var(--sauge)}
-.col.vet li::before{content:'';position:absolute;left:0;top:.62em;width:.65rem;height:2px;background:var(--taupe)}
-.col p{margin-top:1rem;font-size:.94rem;color:var(--taupe)}
-.limite-pied{margin-top:1.3rem;padding:1.1rem 1.25rem;border-left:3px solid var(--sauge);background:var(--creme);font-size:.97rem;max-width:64ch}
-.limite-pied b{color:var(--bois);font-weight:600}
+/* --- le deroule : horaires en marge --- */
+.deroule{border-top:1px solid var(--trait);padding-block:3rem;background:var(--creme)}
+.frise{margin-top:1.8rem}
+.etape{display:grid;grid-template-columns:7.5rem 1fr;gap:.3rem 2.4rem;padding-block:1.15rem;border-top:1px solid var(--trait)}
+.etape:last-of-type{border-bottom:1px solid var(--trait)}
+.e-heure{font-size:.76rem;font-weight:600;letter-spacing:.09em;color:var(--sauge);padding-top:.32rem;white-space:nowrap}
+.e-titre{font-family:'Newsreader',serif;font-size:1.22rem;font-weight:600;color:var(--bois);line-height:1.2}
+.e-txt{font-size:.95rem;margin-top:.2rem;max-width:62ch}
+.encart{margin-top:1.8rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.2rem}
+.encart img{width:100%;height:clamp(180px,22vw,240px);object-fit:cover}
+.encart figure{margin:0}
+.encart figcaption{font-size:.82rem;color:var(--taupe);margin-top:.45rem}
+@media(max-width:700px){.etape{grid-template-columns:1fr;gap:.2rem}.e-heure{padding-top:0}.encart{grid-template-columns:1fr}}
 
-/* --- séance --- */
-.seance{margin-top:2.1rem}
-.mom{display:grid;grid-template-columns:5.5rem 1fr;gap:0 1.4rem;padding-block:1.35rem;border-top:1px solid var(--trait)}
-.mom:last-child{border-bottom:1px solid var(--trait)}
-.m-temps{font-size:.82rem;font-weight:600;color:var(--sauge);letter-spacing:.04em;padding-top:.28rem}
-.m-tit{font-family:'Newsreader',serif;font-size:1.3rem;color:var(--bois);line-height:1.2}
-.m-txt{margin-top:.3rem;max-width:58ch;font-size:.97rem}
+/* --- tarifs, mesure etroite --- */
+.tarifs{padding-block:3rem}
+.tarifs .env{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,5fr);gap:3rem;align-items:start}
+.grille-tarif{margin-top:.2rem}
+.lt{display:grid;grid-template-columns:1fr auto;gap:.1rem 1.2rem;padding-block:.8rem;border-bottom:1px solid var(--trait);align-items:baseline}
+.lt:first-child{border-top:2px solid var(--bois)}
+.lt-nom{font-family:'Newsreader',serif;font-size:1.08rem;font-weight:600;color:var(--bois)}
+.lt-det{display:block;font-size:.85rem;color:var(--taupe);margin-top:.08rem;font-family:'Public Sans',sans-serif}
+.lt-prix{font-size:1.02rem;font-weight:600;color:var(--bois);text-align:right;white-space:nowrap}
+.vignette{width:100%;height:clamp(150px,16vw,190px);object-fit:cover;margin-top:1.4rem}
+.garantie{margin-top:1rem;font-size:.92rem;color:var(--taupe);max-width:50ch}
+@media(max-width:820px){.tarifs .env{grid-template-columns:1fr;gap:1.6rem}}
 
-.vue{background:var(--bois)}
-.vue img{width:100%;height:clamp(215px,35vw,375px);object-fit:cover}
-.vue figcaption{font-size:.78rem;color:var(--sur-sombre-doux);padding:.6rem 1.5rem;max-width:1000px;margin:0 auto}
-
-/* --- tarifs --- */
-.tarifs{margin-top:2rem;border-top:2px solid var(--bois)}
-.tar{display:grid;grid-template-columns:1fr auto;gap:.15rem 1.4rem;padding-block:1.05rem;border-bottom:1px solid var(--trait);align-items:baseline}
-.t-nom{font-family:'Newsreader',serif;font-size:1.24rem;color:var(--bois)}
-.t-det{display:block;font-family:'Public Sans',sans-serif;font-size:.87rem;color:var(--taupe);margin-top:.15rem}
-.t-prix{font-family:'Newsreader',serif;font-size:1.24rem;color:var(--bois);text-align:right;white-space:nowrap}
-.tar-pied{margin-top:1.1rem;font-size:.94rem;color:var(--taupe);max-width:60ch}
-
-.qa{border-top:1px solid var(--trait);padding-block:1.25rem}
+/* --- questions : la question deborde dans la marge --- */
+.questions{border-top:1px solid var(--trait);padding-block:3rem;background:var(--creme)}
+.qa{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);gap:.4rem 2.6rem;padding-block:1.2rem;border-top:1px solid var(--trait)}
 .qa:last-of-type{border-bottom:1px solid var(--trait)}
-.qa dt{font-family:'Newsreader',serif;font-size:1.24rem;color:var(--bois)}
-.qa dd{margin-top:.25rem;max-width:58ch;font-size:.97rem}
+.qa dt{font-family:'Newsreader',serif;font-style:italic;font-size:1.14rem;color:var(--bois);line-height:1.25}
+.qa dd{font-size:.95rem;max-width:62ch}
+@media(max-width:760px){.qa{grid-template-columns:1fr;gap:.25rem}}
 
-.avis{display:grid;grid-template-columns:auto 1fr;gap:2.2rem;align-items:center;margin-top:1.8rem}
-.note{padding-right:2.2rem;border-right:1px solid var(--trait)}
-.note b{font-family:'Newsreader',serif;font-size:3.6rem;font-weight:500;color:var(--bois);line-height:.85;display:block}
-.note .et{color:var(--sauge);letter-spacing:.14em;margin-top:.35rem}
-.note span{display:block;font-size:.76rem;color:var(--taupe);letter-spacing:.05em;margin-top:.4rem}
-
-.contact{background:var(--bois);color:var(--sur-sombre);padding-block:3.3rem}
-.contact h2{color:var(--sur-sombre)}
-.contact .etiq{color:var(--sur-sombre-accent)}
-.c-grille{display:grid;grid-template-columns:1fr 1fr;gap:2.6rem;margin-top:1.8rem}
-.c-tel{font-family:'Newsreader',serif;font-size:2.3rem;color:var(--sur-sombre);text-decoration:none;line-height:1}
+/* --- bande finale sombre --- */
+.finale{background:var(--bois);color:var(--sur-sombre);padding-block:3rem}
+.finale h2,.finale .c-tel{color:var(--sur-sombre)}
+.finale .etiq{color:var(--sur-sombre-accent)}
+.f-grille{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);gap:2.8rem;align-items:start}
+.note b{font-family:'Newsreader',serif;font-size:3.2rem;font-weight:600;color:var(--sur-sombre);line-height:.85;display:block}
+.note .et{color:var(--sur-sombre-accent);letter-spacing:.14em;margin-top:.35rem}
+.note span{display:block;font-size:.7rem;letter-spacing:.1em;color:var(--sur-sombre-doux);margin-top:.4rem}
+.c-tel{font-family:'Newsreader',serif;font-size:1.9rem;font-weight:600;text-decoration:none;line-height:1;display:inline-block;margin-top:.5rem}
 .c-tel:hover{color:var(--sur-sombre-accent)}
-.c-note{margin-top:.8rem;color:var(--sur-sombre-doux);max-width:38ch;font-size:.96rem}
-.zone{font-size:.96rem;color:var(--sur-sombre-doux)}
-.zone div{padding-block:.32rem;border-bottom:1px solid var(--sur-sombre-doux);max-width:26rem}
+.c-note{margin-top:.7rem;color:var(--sur-sombre-doux);font-size:.93rem;max-width:36ch}
+.zone{font-size:.92rem;color:var(--sur-sombre-doux)}
+.zone div{padding-block:.3rem;border-bottom:1px solid var(--sur-sombre-doux)}
 .zone div:last-child{border-bottom:0}
 .zone b{color:var(--sur-sombre);font-weight:600}
+@media(max-width:900px){.f-grille{grid-template-columns:1fr;gap:1.8rem}}
 
-footer{background:var(--bois);color:var(--sur-sombre-doux);font-size:.78rem;padding-block:1.5rem 2.2rem;border-top:1px solid var(--sur-sombre-doux)}
+footer{background:var(--bois);color:var(--sur-sombre-doux);font-size:.77rem;padding-block:1.4rem 2rem;border-top:1px solid var(--sur-sombre-doux)}
 footer a{color:var(--sur-sombre-accent)}
 
-@media(max-width:700px){
-  .limite{grid-template-columns:1fr}
-  .col + .col{border-left:0;border-top:1px solid var(--trait)}
-  .c-grille{grid-template-columns:1fr;gap:1.8rem}
-  .mom{grid-template-columns:1fr;gap:.35rem}
-  .avis{grid-template-columns:1fr;gap:1.1rem}
-  .note{padding-right:0;border-right:0;border-bottom:1px solid var(--trait);padding-bottom:1rem}
-}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 
 /* --- bascule clair / sombre --- */
@@ -201,179 +215,175 @@ footer a{color:var(--sur-sombre-accent)}
   </div>
 </nav>
 
-<header id="haut">
+<div class="affiche" id="haut">
+  <img src="/img/unsplash-photo-1601428317080-25b86da29a02.jpg" alt="Mains posées sur le dos d'un chien"/>
   <div class="env">
-    <h1 class="titre">L'ostéopathie ne remplace pas<br/>le vétérinaire. <em>Voilà où est la limite.</em></h1>
-    <p class="accroche">Certains signes relèvent de moi, d'autres pas du tout — et confondre les deux peut faire perdre du temps à votre animal. Cette page sert d'abord à ça.</p>
-    <div class="ident">
-      <span><b>Léa Martin</b></span>
-      <span>Ostéopathe animalier, diplômée d'un centre agréé</span>
-      <span>Étauliers · Blayais et Haute-Gironde</span>
+    <div class="plaque">
+      <h1 class="titre">L'ostéopathie ne remplace pas le vétérinaire. <em>Voilà où est la limite.</em></h1>
+      <p class="sous-titre">Certains signes relèvent de moi, d'autres pas du tout. Confondre les deux fait perdre du temps à votre animal.</p>
+      <div class="signature">
+        <b>Léa Martin</b> · Ostéopathe animalier, diplômée d'un centre agréé<br/>
+        Étauliers · Blayais et Haute-Gironde
+      </div>
     </div>
   </div>
-</header>
+</div>
 
-<section class="ouverture">
+<section class="aveu">
   <div class="env">
-    <p>Je vous renvoie chez le vétérinaire une fois sur cinq.</p>
-    <p class="suite">C'est un chiffre que peu de confrères affichent, et pourtant c'est le cœur du métier. Un animal qui boite peut avoir une compensation musculaire que je peux traiter — ou une fracture, une infection, une tumeur. Mon travail commence par distinguer les deux, et s'arrête net quand la réponse est « ce n'est pas pour moi ».</p>
+    <h2>Je vous renvoie chez le vétérinaire une fois sur cinq.</h2>
+    <p>Un animal qui boite peut avoir une compensation musculaire que je sais traiter — ou une fracture, une infection, une tumeur. Mon travail commence par distinguer les deux, et s'arrête net quand la réponse est « ce n'est pas pour moi ».</p>
+    <img src="/img/unsplash-photo-1770836037793-95bdbf190f71.jpg" alt="Teckel examiné de près"/>
   </div>
 </section>
 
-<section class="sect" id="limite">
+<section class="balance" id="limite">
   <div class="env">
-    <div class="etiq">La limite</div>
+    <span class="etiq">La limite</span>
     <h2>Ce qui relève de moi, ce qui relève du vétérinaire</h2>
-    <p class="intro">En cas de doute, appelez votre vétérinaire d'abord. Vous ne perdrez jamais votre temps à faire ça dans cet ordre.</p>
+    <p class="chapeau">En cas de doute, appelez votre vétérinaire d'abord. Vous ne perdrez jamais votre temps à faire ça dans cet ordre.</p>
 
-    <div class="limite">
-      <div class="col moi">
-        <div class="c-tit">Appelez-moi</div>
-        <div class="c-sous">Ostéopathie</div>
-        <ul>
+    <div class="plateaux">
+      <div class="cote">
+        <div class="c-tete">Appelez-moi</div>
+        <div class="c-quand">Ostéopathie</div>
+        <ul class="c-liste">
           <li>Raideur au lever, difficulté à monter en voiture</li>
           <li>Boiterie intermittente sans blessure visible</li>
           <li>Chien de sport ou de travail, suivi de saison</li>
-          <li>Après une chute ou un choc, une fois le vétérinaire passé</li>
+          <li>Après une chute, une fois le vétérinaire passé</li>
           <li>Cheval qui refuse un côté, qui se creuse sous la selle</li>
           <li>Chat âgé qui ne saute plus sur son fauteuil</li>
-          <li>Chiot après une croissance rapide</li>
           <li>Suite d'opération, en accord avec le vétérinaire</li>
         </ul>
       </div>
-      <div class="col vet">
-        <div class="c-tit">Allez chez le vétérinaire</div>
-        <div class="c-sous">Avant toute chose</div>
-        <ul>
+      <div class="cote">
+        <div class="c-tete">Allez chez le vétérinaire</div>
+        <div class="c-quand">Avant toute chose</div>
+        <ul class="c-liste">
           <li>Fièvre, abattement, refus de s'alimenter</li>
-          <li>Boiterie apparue brutalement, patte qui ne porte plus</li>
+          <li>Boiterie brutale, patte qui ne porte plus</li>
           <li>Plaie, gonflement chaud, saignement</li>
           <li>Vomissements, diarrhée, ventre dur</li>
           <li>Convulsions, perte d'équilibre, désorientation</li>
           <li>Difficulté respiratoire</li>
           <li>Cheval couché qui ne se relève pas</li>
-          <li>Tout animal en détresse visible</li>
         </ul>
-        <p>Dans ces cas-là, je ne prendrai pas le rendez-vous, même si vous insistez.</p>
+        <p class="c-pied">Dans ces cas-là, je ne prendrai pas le rendez-vous, même si vous insistez.</p>
       </div>
     </div>
 
-    <p class="limite-pied"><b>Je travaille avec votre vétérinaire, pas contre lui.</b> Sur demande, je lui envoie un compte rendu après la séance. Et si je trouve quelque chose qui sort de mon champ pendant la consultation, je m'arrête et je vous le dis — la séance n'est pas facturée.</p>
+    <p class="ensemble">Je travaille avec votre vétérinaire, pas contre lui : sur demande, je lui envoie un compte rendu. Et si je trouve en séance quelque chose qui sort de mon champ, je m'arrête et je vous le dis — la séance n'est pas facturée.</p>
   </div>
 </section>
 
-<section class="sect" id="seance">
+<section class="deroule" id="seance">
   <div class="env">
-    <div class="etiq">Le déroulé</div>
+    <span class="etiq">Le déroulé</span>
     <h2>Comment se passe une séance</h2>
-    <p class="intro">Beaucoup de gens s'imaginent une manipulation brutale ou un animal maintenu de force. Ce n'est ni l'un ni l'autre.</p>
+    <p class="chapeau">Ni manipulation brutale, ni animal maintenu de force.</p>
 
-    <div class="seance">
-      <div class="mom">
-        <div class="m-temps">0 – 10 min</div>
+    <div class="frise">
+      <div class="etape">
+        <div class="e-heure">0 – 10 min</div>
         <div>
-          <div class="m-tit">On parle, l'animal explore</div>
-          <p class="m-txt">Vous me racontez ce que vous observez et depuis quand. Pendant ce temps, l'animal fait le tour de la pièce — ou du van, si on est chez vous. Je le regarde bouger sans le toucher.</p>
+          <div class="e-titre">On parle, l'animal explore</div>
+          <p class="e-txt">Vous racontez ce que vous observez pendant qu'il fait le tour de la pièce. Je le regarde bouger sans le toucher.</p>
         </div>
       </div>
-      <div class="mom">
-        <div class="m-temps">10 – 20 min</div>
+      <div class="etape">
+        <div class="e-heure">10 – 20 min</div>
         <div>
-          <div class="m-tit">Examen en mouvement</div>
-          <p class="m-txt">Marche, trot, montée et descente si c'est possible. C'est souvent là que je vois ce qui ne va pas, avant même de poser les mains.</p>
+          <div class="e-titre">Examen en mouvement</div>
+          <p class="e-txt">Marche, trot, montée et descente. C'est souvent là que je vois, avant de poser les mains.</p>
         </div>
       </div>
-      <div class="mom">
-        <div class="m-temps">20 – 40 min</div>
+      <div class="etape">
+        <div class="e-heure">20 – 40 min</div>
         <div>
-          <div class="m-tit">Le travail manuel</div>
-          <p class="m-txt">Jamais de contention. Si l'animal se dérobe, on s'arrête et on reprend autrement. Vous restez à côté — votre présence le rassure plus que n'importe quelle technique.</p>
+          <div class="e-titre">Le travail manuel</div>
+          <p class="e-txt">Jamais de contention. Si l'animal se dérobe, on s'arrête et on reprend autrement. Vous restez à côté.</p>
         </div>
       </div>
-      <div class="mom">
-        <div class="m-temps">40 – 45 min</div>
+      <div class="etape">
+        <div class="e-heure">40 – 45 min</div>
         <div>
-          <div class="m-tit">Ce que vous faites après</div>
-          <p class="m-txt">Repos relatif 48 h, pas de sport ni de longue balade. Je vous montre deux ou trois gestes simples à faire à la maison, et je vous dis s'il faut une deuxième séance ou non. Souvent, non.</p>
+          <div class="e-titre">Ce que vous faites après</div>
+          <p class="e-txt">Repos relatif 48 h. Je vous montre deux gestes à faire à la maison et je vous dis s'il faut une deuxième séance. Souvent, non.</p>
         </div>
       </div>
+    </div>
+
+    <div class="encart">
+      <figure>
+        <img src="/img/unsplash-photo-1776880952098-1cc6dbbda513.jpg" alt="Examen manuel de la tête d'un chien"/>
+        <figcaption>Le contact se fait à la main, sans appareil.</figcaption>
+      </figure>
+      <figure>
+        <img src="/img/unsplash-photo-1774440865596-7b6e81f6ae2e.jpg" alt="Chien tenu sur les genoux pendant un examen"/>
+        <figcaption>À domicile, l'animal reste dans son environnement et se détend plus vite.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<figure class="vue">
-  <img src="/img/unsplash-photo-1649127616601-6f0a3ea26eae.jpg" alt="Chien en consultation"/>
-  <figcaption>Consultation à domicile — l'animal reste dans son environnement, il se détend plus vite.</figcaption>
-</figure>
-
-<section class="sect" id="tarifs">
+<section class="tarifs" id="tarifs">
   <div class="env">
-    <div class="etiq">Tarifs</div>
-    <h2>Ce que coûte une séance</h2>
-    <p class="intro">Prix TTC, réglables par carte, chèque ou espèces. Facture remise systématiquement — certaines mutuelles animales remboursent.</p>
-
-    <div class="tarifs">
-      <div class="tar"><div><span class="t-nom">Chien, chat</span><span class="t-det">Bilan complet et séance, 45 minutes</span></div><div class="t-prix">60 €</div></div>
-      <div class="tar"><div><span class="t-nom">Cheval, poney</span><span class="t-det">Examen monté si besoin, 1 heure</span></div><div class="t-prix">95 €</div></div>
-      <div class="tar"><div><span class="t-nom">NAC</span><span class="t-det">Lapin, furet, rongeurs, 30 minutes</span></div><div class="t-prix">55 €</div></div>
-      <div class="tar"><div><span class="t-nom">Bilan post-traumatique</span><span class="t-det">Après une chute, un accident, en relais du vétérinaire</span></div><div class="t-prix">70 €</div></div>
-      <div class="tar"><div><span class="t-nom">Suivi sportif</span><span class="t-det">Trois séances dans l'année, chiens et chevaux de travail</span></div><div class="t-prix">165 €</div></div>
-      <div class="tar"><div><span class="t-nom">Déplacement à domicile</span><span class="t-det">Blayais et Haute-Gironde</span></div><div class="t-prix">+ 20 €</div></div>
+    <div>
+      <span class="etiq">Tarifs</span>
+      <h2>Ce que coûte une séance</h2>
+      <p class="chapeau">Prix TTC. Facture remise systématiquement : certaines mutuelles animales remboursent.</p>
+      <img class="vignette" src="/img/unsplash-photo-1649127616601-6f0a3ea26eae.jpg" alt="Palpation du dos d'un chien à poil long"/>
+      <p class="garantie">Si j'interromps la séance parce que le cas relève du vétérinaire, rien n'est facturé : ni la consultation, ni le déplacement. C'est le cas environ une fois sur vingt.</p>
     </div>
-    <p class="tar-pied">Si j'interromps la séance parce que le cas relève du vétérinaire, rien n'est facturé — ni la consultation, ni le déplacement. C'est le cas environ une fois sur vingt.</p>
+    <div class="grille-tarif">
+      <div class="lt"><div><span class="lt-nom">Chien, chat</span><span class="lt-det">Bilan complet et séance, 45 minutes</span></div><div class="lt-prix">60 €</div></div>
+      <div class="lt"><div><span class="lt-nom">Cheval, poney</span><span class="lt-det">Examen monté si besoin, 1 heure</span></div><div class="lt-prix">95 €</div></div>
+      <div class="lt"><div><span class="lt-nom">NAC</span><span class="lt-det">Lapin, furet, rongeurs, 30 minutes</span></div><div class="lt-prix">55 €</div></div>
+      <div class="lt"><div><span class="lt-nom">Bilan post-traumatique</span><span class="lt-det">En relais du vétérinaire</span></div><div class="lt-prix">70 €</div></div>
+      <div class="lt"><div><span class="lt-nom">Suivi sportif</span><span class="lt-det">Trois séances dans l'année</span></div><div class="lt-prix">165 €</div></div>
+      <div class="lt"><div><span class="lt-nom">Déplacement à domicile</span><span class="lt-det">Blayais et Haute-Gironde</span></div><div class="lt-prix">+ 20 €</div></div>
+    </div>
   </div>
 </section>
 
-<section class="sect" id="questions">
+<section class="questions" id="questions">
   <div class="env">
-    <div class="etiq">Questions</div>
+    <span class="etiq">Questions</span>
     <h2>Ce qu'on me demande au téléphone</h2>
-    <dl>
+    <dl style="margin-top:1.4rem">
       <div class="qa">
         <dt>« Est-ce que ça fait mal ? »</dt>
-        <dd>Non. Certains gestes peuvent surprendre, l'animal peut se raidir une seconde, mais il ne cherche pas à fuir. S'il se débat, c'est que je m'y prends mal — j'arrête et je change d'approche.</dd>
+        <dd>Non. Certains gestes surprennent, mais l'animal ne cherche pas à fuir. S'il se débat, c'est que je m'y prends mal : j'arrête et je change d'approche.</dd>
       </div>
       <div class="qa">
         <dt>« Combien de séances faut-il ? »</dt>
-        <dd>Une seule, dans la majorité des cas. Deux si le problème est installé depuis longtemps. Si on m'annonce un forfait de six séances pour un chien qui boite, méfiez-vous — de qui que ce soit.</dd>
+        <dd>Une seule dans la majorité des cas, deux si le problème est installé. Si on vous annonce un forfait de six séances pour un chien qui boite, méfiez-vous.</dd>
       </div>
       <div class="qa">
         <dt>« Vous venez à domicile ? »</dt>
-        <dd>Pour les chevaux, toujours. Pour les chiens et les chats, à la demande — et c'est souvent mieux pour un chat, qui ne supporte pas la caisse de transport.</dd>
+        <dd>Pour les chevaux, toujours. Pour les chiens et les chats à la demande — souvent mieux pour un chat, qui déteste la caisse.</dd>
       </div>
       <div class="qa">
         <dt>« Mon vétérinaire n'y croit pas trop. »</dt>
-        <dd>C'est son droit, et je ne me battrai pas contre lui. Demandez-lui simplement s'il voit une contre-indication médicale à ce que votre animal me voie. S'il dit non, on peut avancer. S'il dit oui, il a une raison.</dd>
+        <dd>C'est son droit. Demandez-lui s'il voit une contre-indication médicale : s'il dit non, on avance ; s'il dit oui, il a une raison.</dd>
       </div>
     </dl>
   </div>
 </section>
 
-<section class="sect">
+<section class="finale" id="contact">
   <div class="env">
-    <div class="etiq">Avis</div>
-    <h2>Ce qu'en disent les propriétaires</h2>
-    <div class="avis">
+    <div class="f-grille">
       <div class="note">
         <b>5,0</b>
         <div class="et">★★★★★</div>
         <span>41 AVIS GOOGLE</span>
       </div>
       <div>
-        <p>Un petit carton avec un QR code part avec la facture. Vous scannez, deux lignes suffisent. Et si quelque chose vous a gênée pendant la séance, le même code permet de me le dire directement — je préfère l'entendre que le lire.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="env">
-    <div class="etiq">Contact</div>
-    <h2>Prendre rendez-vous</h2>
-    <div class="c-grille">
-      <div>
+        <span class="etiq">Contact</span>
         <a class="c-tel" href="tel:+33557000006">05 57 00 00 06</a>
-        <p class="c-note">Je suis en consultation la journée. Laissez un message avec le nom de l'animal, son âge et ce que vous observez — je rappelle entre 19 h et 20 h.</p>
+        <p class="c-note">En consultation la journée. Laissez le nom de l'animal, son âge et ce que vous observez : je rappelle entre 19 h et 20 h.</p>
         <p class="c-note">5 rue des Vétérinaires, 33820 Étauliers</p>
       </div>
       <div class="zone">
@@ -381,7 +391,6 @@ footer a{color:var(--sur-sombre-accent)}
         <div>Étauliers, Braud-et-Saint-Louis, Saint-Ciers</div>
         <div>Blaye, Cars, Berson, Cartelègue, Anglade</div>
         <div>Au-delà de 25 km, nous en parlons au téléphone</div>
-        <div><b>Urgence</b> — appelez votre vétérinaire, pas moi</div>
       </div>
     </div>
   </div>
@@ -390,7 +399,6 @@ footer a{color:var(--sur-sombre-accent)}
 <footer>
   <div class="env">
     Cabinet Léa Martin — 5 rue des Vétérinaires, 33820 Étauliers · SIRET 000 000 000 00000<br/>
-    L'ostéopathie animale ne se substitue pas à un diagnostic vétérinaire.<br/>
     Site de démonstration réalisé par <a href="https://novaspot.fr" target="_blank" rel="noopener">NovaSpot</a>. Informations fictives.
   </div>
 </footer>
