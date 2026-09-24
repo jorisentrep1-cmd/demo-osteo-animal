@@ -4,244 +4,248 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Cabinet Léa Martin — Ostéopathie animale à Étauliers</title>
-<meta name="description" content="Ostéopathie animale en Haute-Gironde : chiens, chats, chevaux, NAC. Ce qui relève de l'ostéopathie et ce qui relève du vétérinaire. Déroulé d'une séance et tarifs."/>
+<meta name="description" content="Ostéopathie animale en Haute-Gironde : chiens, chats, chevaux, NAC. Ce qui relève de l'ostéopathie et ce qui relève du vétérinaire. Tarifs affichés."/>
 <meta name="robots" content="noindex,nofollow"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,300&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
 <script>try{var t=localStorage.getItem("ns-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <style>
 /* ---------------------------------------------------------------
-   La page est batie sur une opposition : ce qui releve de
-   l'osteopathe, ce qui releve du veterinaire. Deux colonnes
-   affrontees au centre de la page, le reste en frise verticale
-   avec les horaires en marge.
-   Paille, bois, vert de sauge : ni bleu clinique, ni pastel.
+   Registre releve sur les cabinets veterinaires les mieux notes :
+   couleurs apaisantes, imagerie emotionnelle, prise de rendez-vous
+   visible tout de suite, tarifs affiches. Le signal de confiance
+   le plus fort de ce cabinet, c'est de dire ce qu'il ne traite
+   pas -- on le met au centre de la page.
    --------------------------------------------------------------- */
 :root{
-  --paille:#EFEAE1;
-  --creme:#F8F5EF;
-  --bois:#231E19;
-  --bois-doux:#463F37;
-  --taupe:#665D51;
-  --trait:#D8D1C4;
-  --sauge:#41604F;
-  --sauge-vif:#547A64;
-  --sur-sombre:#EFEAE1;
-  --sur-sombre-doux:#9C9385;
-  --sur-sombre-accent:#8FB99E;
-  --focus:#41604F;
+  --paille:#F2EDE4;
+  --creme:#FAF7F1;
+  --bois:#221D18;
+  --encre:#211C17;
+  --encre-doux:#4A4238;
+  --taupe:#6B6156;
+  --trait:#DCD4C6;
+  --sauge:#3D5C4A;
+  --sur-bois:#F2EDE4;
+  --sur-bois-doux:#A79C8D;
+  --sur-photo:#FFFFFF;
+  --sur-photo-doux:#EDE7DC;
+  --sauge-photo:#9DC7AC;
+  --sauge-inv:#9DC7AC;
+  --sur-sauge:#F3F8F4;
+  --focus:#3D5C4A;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --paille:#231E19;
-    --creme:#2B251F;
-    --bois:#EFEAE1;
-    --bois-doux:#D2CABD;
-    --taupe:#9C9385;
-    --trait:#3C352D;
-    --sauge:#8FB99E;
-    --sauge-vif:#A6CDB3;
-    --sur-sombre:#2B251F;
-    --sur-sombre-doux:#5A5147;
-    --sur-sombre-accent:#2E4A39;
-    --focus:#8FB99E;
+    --paille:#191410;
+    --creme:#211B15;
+    --bois:#F0EAE0;
+    --encre:#F1ECE4;
+    --encre-doux:#CCC4B8;
+    --taupe:#968C7E;
+    --trait:#332C24;
+    --sauge:#8FBFA1;
+    --sur-bois:#1C1712;
+    --sur-bois-doux:#544B40;
+    --sauge-inv:#2C4837;
+    --sur-sauge:#0B1C13;
+    --focus:#8FBFA1;
   }
 }
 :root[data-theme="dark"]{
-  --paille:#231E19;
-  --creme:#2B251F;
-  --bois:#EFEAE1;
-  --bois-doux:#D2CABD;
-  --taupe:#9C9385;
-  --trait:#3C352D;
-  --sauge:#8FB99E;
-  --sauge-vif:#A6CDB3;
-  --sur-sombre:#2B251F;
-  --sur-sombre-doux:#5A5147;
-  --sur-sombre-accent:#2E4A39;
-  --focus:#8FB99E;
+  --paille:#191410;
+  --creme:#211B15;
+  --bois:#F0EAE0;
+  --encre:#F1ECE4;
+  --encre-doux:#CCC4B8;
+  --taupe:#968C7E;
+  --trait:#332C24;
+  --sauge:#8FBFA1;
+  --sur-bois:#1C1712;
+  --sur-bois-doux:#544B40;
+  --sauge-inv:#2C4837;
+  --sur-sauge:#0B1C13;
+  --focus:#8FBFA1;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:3.6rem}
-body{background:var(--paille);color:var(--bois-doux);font-family:'Public Sans',system-ui,sans-serif;font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:'Newsreader',Georgia,serif;color:var(--bois);font-weight:500;letter-spacing:-.005em}
-a{color:var(--sauge)}
+html{scroll-behavior:smooth;scroll-padding-top:4rem}
+body{background:var(--paille);color:var(--encre-doux);font-family:'Public Sans',system-ui,sans-serif;
+  font-size:15px;line-height:1.64;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Newsreader',Georgia,serif;color:var(--encre);font-weight:400;letter-spacing:-.005em}
+a{color:var(--encre)}
 :focus-visible{outline:2px solid var(--focus);outline-offset:3px}
 img{max-width:100%;display:block}
-.env{max-width:1060px;margin:0 auto;padding-inline:1.5rem}
+.env{max-width:1200px;margin:0 auto;padding-inline:1.8rem}
+.etiq{font-size:.66rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--sauge)}
 
-.demo{background:var(--bois);color:var(--sur-sombre);padding:.5rem 1rem;text-align:center;font-size:.74rem}
-.demo a{color:var(--sur-sombre-accent);font-weight:600}
-.demo b{color:var(--sur-sombre)}
+.demo{background:var(--bois);color:var(--sur-bois);padding:.5rem 1rem;text-align:center;font-size:.72rem}
+.demo a{color:var(--sur-bois);font-weight:600}
+.demo b{color:var(--sur-bois)}
 
-.barre{position:sticky;top:0;z-index:20;background:var(--paille);border-bottom:1px solid var(--trait)}
-.b-in{display:flex;align-items:center;gap:1.5rem;min-height:3.05rem}
-.b-marque{font-family:'Newsreader',serif;font-weight:600;font-size:1.12rem;color:var(--bois);text-decoration:none;flex-shrink:0}
-.b-liens{display:flex;gap:1.4rem;margin-left:auto}
-.b-liens a{font-size:.82rem;font-weight:500;color:var(--bois-doux);text-decoration:none;padding-block:.2rem;border-bottom:2px solid transparent}
-.b-liens a:hover{color:var(--bois);border-bottom-color:var(--sauge)}
-.b-tel{font-size:.84rem;font-weight:600;background:var(--sauge);color:var(--creme);text-decoration:none;padding:.46rem 1rem;flex-shrink:0;white-space:nowrap;border-radius:3px}
-.b-tel:hover{background:var(--bois)}
+.barre{position:absolute;top:0;left:0;right:0;z-index:20;background:rgba(24,19,14,.62);padding-block:.9rem}
+.b-in{display:flex;align-items:center;gap:1.5rem;min-height:2.6rem}
+.b-marque{font-family:'Newsreader',serif;font-size:1.3rem;color:#F6F2EA;text-decoration:none;line-height:1.05;flex-shrink:0}
+.b-marque small{display:block;font-family:'Public Sans',sans-serif;font-size:.56rem;font-weight:600;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--sur-photo-doux);margin-top:.2rem}
+.b-liens{display:flex;gap:1.6rem;margin-left:auto}
+.b-liens a{font-size:.72rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--sur-photo-doux);
+  text-decoration:none;padding-block:.3rem;border-bottom:1px solid transparent}
+.b-liens a:hover{color:#F6F2EA;border-bottom-color:#F6F2EA}
+.b-tel{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--sauge-photo);
+  color:#0B1C13;text-decoration:none;padding:.78rem 1.25rem;white-space:nowrap;border-radius:3px}
+.b-tel:hover{background:#F6F2EA}
 .b-court{display:none}
-@media(max-width:860px){.b-liens{display:none}.b-long{display:none}.b-court{display:inline}}
+@media(max-width:940px){.b-liens{display:none}.b-long{display:none}.b-court{display:inline}}
+@media(max-width:520px){.env{padding-inline:1.2rem}.b-in{gap:.7rem}.b-marque{font-size:1.1rem}.b-tel{padding:.66rem 1rem}}
 
-/* --- affiche d'ouverture : photo pleine largeur, titre sur plaque --- */
-.affiche{position:relative}
-.affiche > img{width:100%;height:clamp(300px,46vw,520px);object-fit:cover;object-position:center 40%}
-.plaque{background:var(--paille);padding:2rem 2.4rem 1.8rem 0;max-width:40rem}
-@media(min-width:900px){
-  .affiche .env{position:absolute;left:0;right:0;bottom:0}
-  .plaque{margin-bottom:0}
-}
-.titre{font-size:clamp(1.9rem,4.2vw,3rem);line-height:1.1;font-weight:400}
-.titre em{font-style:italic;color:var(--sauge)}
-.sous-titre{margin-top:.9rem;max-width:46ch;font-size:1rem}
-.signature{border-top:1px solid var(--trait);margin-top:1.2rem;padding-top:.8rem;font-size:.86rem;color:var(--taupe)}
-.signature b{color:var(--bois);font-weight:600;font-family:'Newsreader',serif;font-size:1rem}
+/* --- ouverture --- */
+.ouverture{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.ouverture > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ouv-txt{position:relative;z-index:2;width:100%;padding-block:4.5rem 4.5rem;
+  background:linear-gradient(to top,rgba(24,19,14,.90),rgba(24,19,14,.70))}
+.ouv-txt .etiq{color:var(--sauge-photo)}
+.ouverture h1{font-size:clamp(2.1rem,5vw,3.9rem);color:var(--sur-photo);max-width:19ch;margin-top:1rem;
+  line-height:1.1;font-weight:300}
+.ouverture h1 em{font-style:italic}
+.ouv-sous{color:var(--sur-photo-doux);margin-top:1.2rem;max-width:50ch;font-size:1rem}
+.action{display:inline-block;margin-top:1.8rem;font-size:.72rem;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;background:var(--sauge-photo);color:#0B1C13;text-decoration:none;padding:1rem 1.8rem;border-radius:3px}
+.action:hover{background:#F6F2EA}
+.ouv-pied{display:flex;flex-wrap:wrap;gap:.4rem 2.4rem;margin-top:2rem;padding-top:1.2rem;
+  border-top:1px solid rgba(246,242,234,.3);font-size:.83rem;color:var(--sur-photo-doux)}
+.ouv-pied b{color:var(--sur-photo);font-weight:600}
+@media(max-width:700px){.ouverture{min-height:88svh}.ouv-txt{padding-block:3.2rem 3rem}}
 
-/* --- le chiffre qui ouvre --- */
-.aveu{border-block:1px solid var(--trait);padding-block:2.4rem;background:var(--creme)}
-.aveu .env{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr) minmax(0,3fr);gap:2.8rem;align-items:center}
-.aveu img{width:100%;height:clamp(150px,17vw,200px);object-fit:cover}
-.aveu h2{font-size:clamp(1.5rem,3.2vw,2.15rem);line-height:1.14}
-.aveu p{font-size:.98rem}
-@media(max-width:980px){.aveu .env{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:1.6rem 2.4rem}.aveu img{display:none}}
-@media(max-width:820px){.aveu .env{grid-template-columns:1fr;gap:1rem}}
+.sect{padding-block:4.6rem}
+h2{font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1.14;margin-top:.7rem;font-weight:300}
+.intro{margin-top:.9rem;max-width:56ch;font-size:.97rem}
 
-/* --- la balance : deux colonnes affrontees --- */
-.balance{padding-block:3rem}
-.etiq{font-family:'Public Sans',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sauge)}
-h2{font-size:clamp(1.5rem,3.2vw,2.15rem);line-height:1.14;margin-top:.3rem}
-.chapeau{margin-top:.6rem;max-width:58ch;font-size:.98rem}
-.plateaux{margin-top:2rem;display:grid;grid-template-columns:1fr 1fr;gap:0}
+/* --- la limite : le signal de confiance, au centre --- */
+.limite{background:var(--creme);border-block:1px solid var(--trait);padding-block:4.6rem}
+.plateaux{margin-top:2.2rem;display:grid;grid-template-columns:1fr 1fr;gap:0}
 .cote{padding:0 2.4rem}
 .cote:first-child{padding-left:0;border-right:1px solid var(--trait)}
 .cote:last-child{padding-right:0}
-.c-tete{font-family:'Newsreader',serif;font-size:1.35rem;font-weight:600;color:var(--bois);padding-bottom:.55rem;border-bottom:3px solid var(--sauge)}
+.c-tete{font-family:'Newsreader',serif;font-size:1.4rem;color:var(--encre);padding-bottom:.55rem;border-bottom:3px solid var(--sauge)}
 .cote:last-child .c-tete{border-bottom-color:var(--taupe)}
-.c-quand{font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe);margin-top:.6rem}
+.c-quand{font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--taupe);margin-top:.6rem}
 .c-liste{list-style:none;margin-top:.8rem}
-.c-liste li{font-size:.94rem;line-height:1.45;padding-block:.42rem;border-bottom:1px solid var(--trait)}
+.c-liste li{font-size:.93rem;padding-block:.42rem;border-bottom:1px solid var(--trait)}
 .c-pied{margin-top:.9rem;font-size:.9rem;color:var(--taupe);font-style:italic}
-.ensemble{margin-top:2rem;padding:1.1rem 1.3rem;background:var(--creme);border-left:3px solid var(--sauge);font-size:.95rem;max-width:74ch}
-@media(max-width:760px){
-  .plateaux{grid-template-columns:1fr;gap:2rem}
-  .cote{padding:0}
-  .cote:first-child{border-right:0;border-bottom:1px solid var(--trait);padding-bottom:1.6rem}
-}
+.ensemble{margin-top:2rem;padding:1.1rem 1.3rem;background:var(--paille);border-left:3px solid var(--sauge);font-size:.95rem;max-width:76ch}
+@media(max-width:760px){.plateaux{grid-template-columns:1fr;gap:2rem}.cote{padding:0}
+  .cote:first-child{border-right:0;border-bottom:1px solid var(--trait);padding-bottom:1.6rem}}
 
-/* --- le deroule : horaires en marge --- */
-.deroule{border-top:1px solid var(--trait);padding-block:3rem;background:var(--creme)}
-.frise{margin-top:1.8rem}
-.etape{display:grid;grid-template-columns:7.5rem 1fr;gap:.3rem 2.4rem;padding-block:1.15rem;border-top:1px solid var(--trait)}
+/* --- les patients, en bande --- */
+.patients{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--trait)}
+.patients figure{margin:0;position:relative;background:var(--paille)}
+.patients img{width:100%;height:clamp(210px,27vw,340px);object-fit:cover}
+.patients figcaption{position:absolute;left:0;bottom:0;background:rgba(24,19,14,.88);color:#F6F2EA;
+  font-size:.72rem;font-weight:600;letter-spacing:.06em;padding:.55rem 1rem}
+@media(max-width:760px){.patients{grid-template-columns:1fr 1fr}.patients figure:nth-child(3){display:none}}
+
+/* --- seance et tarifs cote a cote --- */
+.pratique .env{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:3.4rem;align-items:start}
+.etape{display:grid;grid-template-columns:6.5rem 1fr;gap:.3rem 1.6rem;padding-block:1rem;border-top:1px solid var(--trait)}
 .etape:last-of-type{border-bottom:1px solid var(--trait)}
-.e-heure{font-size:.76rem;font-weight:600;letter-spacing:.09em;color:var(--sauge);padding-top:.32rem;white-space:nowrap}
-.e-titre{font-family:'Newsreader',serif;font-size:1.22rem;font-weight:600;color:var(--bois);line-height:1.2}
-.e-txt{font-size:.95rem;margin-top:.2rem;max-width:62ch}
-.encart{margin-top:1.8rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.2rem}
-.encart img{width:100%;height:clamp(180px,22vw,240px);object-fit:cover}
-.encart figure{margin:0}
-.encart figcaption{font-size:.82rem;color:var(--taupe);margin-top:.45rem}
-@media(max-width:700px){.etape{grid-template-columns:1fr;gap:.2rem}.e-heure{padding-top:0}.encart{grid-template-columns:1fr}}
+.e-heure{font-size:.72rem;font-weight:600;letter-spacing:.08em;color:var(--sauge);padding-top:.3rem;white-space:nowrap}
+.e-titre{font-family:'Newsreader',serif;font-size:1.15rem;color:var(--encre);line-height:1.2}
+.e-txt{font-size:.92rem;margin-top:.2rem}
+.lt{display:grid;grid-template-columns:1fr auto;gap:.1rem 1.2rem;padding-block:.75rem;border-bottom:1px solid var(--trait);align-items:baseline}
+.lt:first-of-type{border-top:2px solid var(--encre)}
+.lt-nom{font-family:'Newsreader',serif;font-size:1.05rem;color:var(--encre)}
+.lt-det{display:block;font-size:.84rem;color:var(--taupe);margin-top:.06rem;font-family:'Public Sans',sans-serif}
+.lt-prix{font-family:'Newsreader',serif;font-size:1.15rem;color:var(--encre);white-space:nowrap;text-align:right}
+.garantie{margin-top:1rem;font-size:.9rem;color:var(--taupe);max-width:50ch}
+@media(max-width:880px){.pratique .env{grid-template-columns:1fr;gap:2.4rem}}
 
-/* --- tarifs, mesure etroite --- */
-.tarifs{padding-block:3rem}
-.tarifs .env{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,5fr);gap:3rem;align-items:start}
-.grille-tarif{margin-top:.2rem}
-.lt{display:grid;grid-template-columns:1fr auto;gap:.1rem 1.2rem;padding-block:.8rem;border-bottom:1px solid var(--trait);align-items:baseline}
-.lt:first-child{border-top:2px solid var(--bois)}
-.lt-nom{font-family:'Newsreader',serif;font-size:1.08rem;font-weight:600;color:var(--bois)}
-.lt-det{display:block;font-size:.85rem;color:var(--taupe);margin-top:.08rem;font-family:'Public Sans',sans-serif}
-.lt-prix{font-size:1.02rem;font-weight:600;color:var(--bois);text-align:right;white-space:nowrap}
-.vignette{width:100%;height:clamp(150px,16vw,190px);object-fit:cover;margin-top:1.4rem}
-.garantie{margin-top:1rem;font-size:.92rem;color:var(--taupe);max-width:50ch}
-@media(max-width:820px){.tarifs .env{grid-template-columns:1fr;gap:1.6rem}}
+/* --- avis : destination du QR code imprime --- */
+.avis{background:var(--bois);color:var(--sur-bois-doux);padding-block:4.5rem}
+.avis .env{display:grid;grid-template-columns:auto minmax(0,1fr);gap:3.5rem;align-items:center}
+.avis h2{color:var(--sur-bois)}
+.avis .etiq{color:var(--sauge-inv)}
+.note b{display:block;font-family:'Newsreader',serif;font-size:3.8rem;color:var(--sur-bois);line-height:.85;font-weight:400}
+.note .et{color:var(--sauge-inv);letter-spacing:.16em;font-size:1rem;margin-top:.5rem}
+.note span{display:block;font-size:.66rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sur-bois-doux);margin-top:.5rem}
+.avis p{margin-top:.8rem;max-width:58ch;font-size:.95rem}
+.chemins{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+.chemin{font-size:.7rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;text-decoration:none;
+  padding:.9rem 1.4rem;border:1px solid var(--sur-bois);color:var(--sur-bois);border-radius:3px}
+.chemin.plein{background:var(--sauge-inv);border-color:var(--sauge-inv);color:var(--bois)}
+.chemin:hover{opacity:.82}
+@media(max-width:760px){.avis .env{grid-template-columns:1fr;gap:1.8rem}}
 
-/* --- questions : la question deborde dans la marge --- */
-.questions{border-top:1px solid var(--trait);padding-block:3rem;background:var(--creme)}
-.qa{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);gap:.4rem 2.6rem;padding-block:1.2rem;border-top:1px solid var(--trait)}
+/* --- questions --- */
+.qa{display:grid;grid-template-columns:minmax(0,14rem) minmax(0,1fr);gap:.4rem 2.6rem;padding-block:1.1rem;border-top:1px solid var(--trait)}
 .qa:last-of-type{border-bottom:1px solid var(--trait)}
-.qa dt{font-family:'Newsreader',serif;font-style:italic;font-size:1.14rem;color:var(--bois);line-height:1.25}
-.qa dd{font-size:.95rem;max-width:62ch}
+.qa dt{font-family:'Newsreader',serif;font-style:italic;font-size:1.1rem;color:var(--encre);line-height:1.25}
+.qa dd{font-size:.94rem;max-width:62ch}
 @media(max-width:760px){.qa{grid-template-columns:1fr;gap:.25rem}}
 
-/* --- bande finale sombre --- */
-.finale{background:var(--bois);color:var(--sur-sombre);padding-block:3rem}
-.finale h2,.finale .c-tel{color:var(--sur-sombre)}
-.finale .etiq{color:var(--sur-sombre-accent)}
-.f-grille{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);gap:2.8rem;align-items:start}
-.note b{font-family:'Newsreader',serif;font-size:3.2rem;font-weight:600;color:var(--sur-sombre);line-height:.85;display:block}
-.note .et{color:var(--sur-sombre-accent);letter-spacing:.14em;margin-top:.35rem}
-.note span{display:block;font-size:.7rem;letter-spacing:.1em;color:var(--sur-sombre-doux);margin-top:.4rem}
-.c-tel{font-family:'Newsreader',serif;font-size:1.9rem;font-weight:600;text-decoration:none;line-height:1;display:inline-block;margin-top:.5rem}
-.c-tel:hover{color:var(--sur-sombre-accent)}
-.c-note{margin-top:.7rem;color:var(--sur-sombre-doux);font-size:.93rem;max-width:36ch}
-.zone{font-size:.92rem;color:var(--sur-sombre-doux)}
-.zone div{padding-block:.3rem;border-bottom:1px solid var(--sur-sombre-doux)}
-.zone div:last-child{border-bottom:0}
-.zone b{color:var(--sur-sombre);font-weight:600}
-@media(max-width:900px){.f-grille{grid-template-columns:1fr;gap:1.8rem}}
+/* --- contact sur photo --- */
+.contact{position:relative;overflow:hidden}
+.contact > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.c-voile{position:relative;z-index:2;background:rgba(24,19,14,.86);padding-block:4.8rem}
+.contact .env{text-align:center}
+.contact .etiq{color:var(--sauge-photo)}
+.c-tel{display:inline-block;font-family:'Newsreader',serif;font-size:clamp(2rem,4.4vw,3rem);
+  color:var(--sur-photo);text-decoration:none;margin-top:.9rem;line-height:1;font-weight:400}
+.c-tel:hover{color:var(--sauge-photo)}
+.c-note{color:var(--sur-photo-doux);font-size:.95rem;margin-top:1rem;max-width:46ch;margin-inline:auto}
+.zone{margin-top:2.2rem;padding-top:1.3rem;border-top:1px solid rgba(246,242,234,.3);
+  display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 2.4rem;font-size:.84rem;color:var(--sur-photo-doux)}
+.zone b{color:var(--sur-photo);font-weight:600}
 
-footer{background:var(--bois);color:var(--sur-sombre-doux);font-size:.77rem;padding-block:1.4rem 2rem;border-top:1px solid var(--sur-sombre-doux)}
-footer a{color:var(--sur-sombre-accent)}
+footer{background:var(--paille);color:var(--taupe);font-size:.76rem;padding-block:2rem 2.4rem;text-align:center}
+footer a{color:var(--encre)}
 
-@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.b-theme{display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;padding:0;
+  flex-shrink:0;cursor:pointer;background:none;color:var(--sur-photo-doux);border:1px solid currentColor;border-radius:99px;opacity:.85}
+.b-theme:hover{opacity:1;color:var(--sur-photo)}
 
-/* --- bascule clair / sombre --- */
-.b-theme{display:inline-flex;align-items:center;justify-content:center;
-  width:2rem;height:2rem;padding:0;flex-shrink:0;cursor:pointer;
-  background:none;color:inherit;border:1px solid currentColor;border-radius:99px;opacity:.55}
-.b-theme:hover{opacity:1}
-@media(max-width:860px){.b-theme{margin-left:auto}.b-theme + .b-tel{margin-left:.5rem}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 
 <div class="demo"><b>Exemple</b> — site de démonstration réalisé par NovaSpot · <a href="https://novaspot.fr" target="_blank" rel="noopener">novaspot.fr</a></div>
 
-<nav class="barre" aria-label="Accès rapide">
-  <div class="env b-in">
-    <a class="b-marque" href="#haut">Cabinet Léa Martin</a>
-    <div class="b-liens">
-      <a href="#limite">Ostéo ou vétérinaire</a>
-      <a href="#seance">La séance</a>
-      <a href="#tarifs">Tarifs</a>
-      <a href="#questions">Questions</a>
+<header class="ouverture" id="haut">
+  <img src="/img/o-mains.jpg" alt="Mains posées sur le dos d'un chien" width="1600" height="1067" fetchpriority="high"/>
+  <nav class="barre" aria-label="Accès rapide">
+    <div class="env b-in">
+      <a class="b-marque" href="#haut">Léa Martin<small>Ostéopathie animale</small></a>
+      <div class="b-liens">
+        <a href="#limite">Ostéo ou vétérinaire</a>
+        <a href="#pratique">La séance</a>
+        <a href="#avis">Avis</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="b-theme" type="button" aria-label="Passer en thème sombre"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"></svg></button>
+      <a class="b-tel" href="tel:+33557000006"><span class="b-long">05 57 00 00 06</span><span class="b-court">Appeler</span></a>
     </div>
-    <button class="b-theme" type="button" aria-label="Passer en thème sombre"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"></svg></button>
-    <a class="b-tel" href="tel:+33557000006"><span class="b-long">05 57 00 00 06</span><span class="b-court">Appeler</span></a>
-  </div>
-</nav>
-
-<div class="affiche" id="haut">
-  <img src="/img/unsplash-photo-1601428317080-25b86da29a02.jpg" alt="Mains posées sur le dos d'un chien"/>
-  <div class="env">
-    <div class="plaque">
-      <h1 class="titre">L'ostéopathie ne remplace pas le vétérinaire. <em>Voilà où est la limite.</em></h1>
-      <p class="sous-titre">Certains signes relèvent de moi, d'autres pas du tout. Confondre les deux fait perdre du temps à votre animal.</p>
-      <div class="signature">
-        <b>Léa Martin</b> · Ostéopathe animalier, diplômée d'un centre agréé<br/>
-        Étauliers · Blayais et Haute-Gironde
+  </nav>
+  <div class="ouv-txt">
+    <div class="env">
+      <div class="etiq">Chiens · Chats · Chevaux · NAC · Étauliers</div>
+      <h1>L'ostéopathie ne remplace pas le vétérinaire. <em>Voilà où est la limite.</em></h1>
+      <p class="ouv-sous">Je vous renvoie chez le vétérinaire une fois sur cinq. C'est un chiffre que peu de confrères affichent, et pourtant c'est le cœur du métier.</p>
+      <a class="action" href="#contact">Prendre rendez-vous</a>
+      <div class="ouv-pied">
+        <span><b>Léa Martin</b> · diplômée d'un centre agréé</span>
+        <span><b>5,0</b> ★★★★★ · 41 avis</span>
       </div>
     </div>
   </div>
-</div>
+</header>
 
-<section class="aveu">
+<section class="limite" id="limite">
   <div class="env">
-    <h2>Je vous renvoie chez le vétérinaire une fois sur cinq.</h2>
-    <p>Un animal qui boite peut avoir une compensation musculaire que je sais traiter — ou une fracture, une infection, une tumeur. Mon travail commence par distinguer les deux, et s'arrête net quand la réponse est « ce n'est pas pour moi ».</p>
-    <img src="/img/unsplash-photo-1770836037793-95bdbf190f71.jpg" alt="Teckel examiné de près"/>
-  </div>
-</section>
-
-<section class="balance" id="limite">
-  <div class="env">
-    <span class="etiq">La limite</span>
+    <div class="etiq">La limite</div>
     <h2>Ce qui relève de moi, ce qui relève du vétérinaire</h2>
-    <p class="chapeau">En cas de doute, appelez votre vétérinaire d'abord. Vous ne perdrez jamais votre temps à faire ça dans cet ordre.</p>
+    <p class="intro">En cas de doute, appelez votre vétérinaire d'abord. Vous ne perdrez jamais votre temps à faire ça dans cet ordre.</p>
 
     <div class="plateaux">
       <div class="cote">
@@ -254,7 +258,6 @@ footer a{color:var(--sur-sombre-accent)}
           <li>Après une chute, une fois le vétérinaire passé</li>
           <li>Cheval qui refuse un côté, qui se creuse sous la selle</li>
           <li>Chat âgé qui ne saute plus sur son fauteuil</li>
-          <li>Suite d'opération, en accord avec le vétérinaire</li>
         </ul>
       </div>
       <div class="cote">
@@ -267,7 +270,6 @@ footer a{color:var(--sur-sombre-accent)}
           <li>Vomissements, diarrhée, ventre dur</li>
           <li>Convulsions, perte d'équilibre, désorientation</li>
           <li>Difficulté respiratoire</li>
-          <li>Cheval couché qui ne se relève pas</li>
         </ul>
         <p class="c-pied">Dans ces cas-là, je ne prendrai pas le rendez-vous, même si vous insistez.</p>
       </div>
@@ -277,79 +279,70 @@ footer a{color:var(--sur-sombre-accent)}
   </div>
 </section>
 
-<section class="deroule" id="seance">
-  <div class="env">
-    <span class="etiq">Le déroulé</span>
-    <h2>Comment se passe une séance</h2>
-    <p class="chapeau">Ni manipulation brutale, ni animal maintenu de force.</p>
+<div class="patients">
+  <figure><img src="/img/o-cheval.jpg" alt="Cheval à l'écurie" width="1200" height="800" loading="lazy" decoding="async"/><figcaption>Chevaux, à domicile</figcaption></figure>
+  <figure><img src="/img/o-chat.jpg" alt="Chat âgé endormi sur une chaise" width="1200" height="800" loading="lazy" decoding="async"/><figcaption>Chats âgés</figcaption></figure>
+  <figure><img src="/img/o-genoux.jpg" alt="Petit chien tenu sur les genoux" width="1200" height="1800" loading="lazy" decoding="async"/><figcaption>Chiens et NAC</figcaption></figure>
+</div>
 
-    <div class="frise">
+<section class="sect pratique" id="pratique">
+  <div class="env">
+    <div>
+      <div class="etiq">Le déroulé</div>
+      <h2>Comment se passe une séance</h2>
+      <p class="intro">Ni manipulation brutale, ni animal maintenu de force.</p>
       <div class="etape">
         <div class="e-heure">0 – 10 min</div>
-        <div>
-          <div class="e-titre">On parle, l'animal explore</div>
-          <p class="e-txt">Vous racontez ce que vous observez pendant qu'il fait le tour de la pièce. Je le regarde bouger sans le toucher.</p>
-        </div>
+        <div><div class="e-titre">On parle, l'animal explore</div><p class="e-txt">Vous racontez ce que vous observez pendant qu'il fait le tour de la pièce. Je le regarde bouger sans le toucher.</p></div>
       </div>
       <div class="etape">
         <div class="e-heure">10 – 20 min</div>
-        <div>
-          <div class="e-titre">Examen en mouvement</div>
-          <p class="e-txt">Marche, trot, montée et descente. C'est souvent là que je vois, avant de poser les mains.</p>
-        </div>
+        <div><div class="e-titre">Examen en mouvement</div><p class="e-txt">Marche, trot, montée et descente. C'est souvent là que je vois, avant de poser les mains.</p></div>
       </div>
       <div class="etape">
         <div class="e-heure">20 – 40 min</div>
-        <div>
-          <div class="e-titre">Le travail manuel</div>
-          <p class="e-txt">Jamais de contention. Si l'animal se dérobe, on s'arrête et on reprend autrement. Vous restez à côté.</p>
-        </div>
+        <div><div class="e-titre">Le travail manuel</div><p class="e-txt">Jamais de contention. Si l'animal se dérobe, on s'arrête et on reprend autrement. Vous restez à côté.</p></div>
       </div>
       <div class="etape">
         <div class="e-heure">40 – 45 min</div>
-        <div>
-          <div class="e-titre">Ce que vous faites après</div>
-          <p class="e-txt">Repos relatif 48 h. Je vous montre deux gestes à faire à la maison et je vous dis s'il faut une deuxième séance. Souvent, non.</p>
-        </div>
+        <div><div class="e-titre">Ce que vous faites après</div><p class="e-txt">Repos relatif 48 h. Je vous montre deux gestes à faire à la maison et je vous dis s'il faut une deuxième séance. Souvent, non.</p></div>
       </div>
     </div>
-
-    <div class="encart">
-      <figure>
-        <img src="/img/unsplash-photo-1776880952098-1cc6dbbda513.jpg" alt="Examen manuel de la tête d'un chien"/>
-        <figcaption>Le contact se fait à la main, sans appareil.</figcaption>
-      </figure>
-      <figure>
-        <img src="/img/unsplash-photo-1774440865596-7b6e81f6ae2e.jpg" alt="Chien tenu sur les genoux pendant un examen"/>
-        <figcaption>À domicile, l'animal reste dans son environnement et se détend plus vite.</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<section class="tarifs" id="tarifs">
-  <div class="env">
     <div>
-      <span class="etiq">Tarifs</span>
+      <div class="etiq">Tarifs</div>
       <h2>Ce que coûte une séance</h2>
-      <p class="chapeau">Prix TTC. Facture remise systématiquement : certaines mutuelles animales remboursent.</p>
-      <img class="vignette" src="/img/unsplash-photo-1649127616601-6f0a3ea26eae.jpg" alt="Palpation du dos d'un chien à poil long"/>
-      <p class="garantie">Si j'interromps la séance parce que le cas relève du vétérinaire, rien n'est facturé : ni la consultation, ni le déplacement. C'est le cas environ une fois sur vingt.</p>
-    </div>
-    <div class="grille-tarif">
       <div class="lt"><div><span class="lt-nom">Chien, chat</span><span class="lt-det">Bilan complet et séance, 45 minutes</span></div><div class="lt-prix">60 €</div></div>
       <div class="lt"><div><span class="lt-nom">Cheval, poney</span><span class="lt-det">Examen monté si besoin, 1 heure</span></div><div class="lt-prix">95 €</div></div>
       <div class="lt"><div><span class="lt-nom">NAC</span><span class="lt-det">Lapin, furet, rongeurs, 30 minutes</span></div><div class="lt-prix">55 €</div></div>
       <div class="lt"><div><span class="lt-nom">Bilan post-traumatique</span><span class="lt-det">En relais du vétérinaire</span></div><div class="lt-prix">70 €</div></div>
-      <div class="lt"><div><span class="lt-nom">Suivi sportif</span><span class="lt-det">Trois séances dans l'année</span></div><div class="lt-prix">165 €</div></div>
       <div class="lt"><div><span class="lt-nom">Déplacement à domicile</span><span class="lt-det">Blayais et Haute-Gironde</span></div><div class="lt-prix">+ 20 €</div></div>
+      <p class="garantie">Si j'interromps la séance parce que le cas relève du vétérinaire, rien n'est facturé : ni la consultation, ni le déplacement. C'est le cas environ une fois sur vingt.</p>
     </div>
   </div>
 </section>
 
-<section class="questions" id="questions">
+<section class="avis" id="avis">
   <div class="env">
-    <span class="etiq">Questions</span>
+    <div class="note">
+      <b>5,0</b>
+      <div class="et">★★★★★</div>
+      <span>41 avis Google</span>
+    </div>
+    <div>
+      <div class="etiq">Votre avis</div>
+      <h2>Votre animal vient d'être vu ?</h2>
+      <p>Un petit carton avec un QR code part avec la facture. Il mène ici. Si la séance vous a aidée, deux lignes sur Google aident le prochain propriétaire à se décider. Si quelque chose vous a gênée, dites-le-moi directement — je préfère l'entendre que le lire.</p>
+      <div class="chemins">
+        <a class="chemin plein" href="https://search.google.com/local/writereview?placeid=PLACE_ID_DU_CLIENT" target="_blank" rel="noopener">Laisser un avis Google</a>
+        <a class="chemin" href="tel:+33557000006">Me dire ce qui vous a gênée</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sect" id="questions">
+  <div class="env">
+    <div class="etiq">Questions</div>
     <h2>Ce qu'on me demande au téléphone</h2>
     <dl style="margin-top:1.4rem">
       <div class="qa">
@@ -372,25 +365,16 @@ footer a{color:var(--sur-sombre-accent)}
   </div>
 </section>
 
-<section class="finale" id="contact">
-  <div class="env">
-    <div class="f-grille">
-      <div class="note">
-        <b>5,0</b>
-        <div class="et">★★★★★</div>
-        <span>41 AVIS GOOGLE</span>
-      </div>
-      <div>
-        <span class="etiq">Contact</span>
-        <a class="c-tel" href="tel:+33557000006">05 57 00 00 06</a>
-        <p class="c-note">En consultation la journée. Laissez le nom de l'animal, son âge et ce que vous observez : je rappelle entre 19 h et 20 h.</p>
-        <p class="c-note">5 rue des Vétérinaires, 33820 Étauliers</p>
-      </div>
+<section class="contact" id="contact">
+  <img src="/img/o-tete.jpg" alt="Examen manuel de la tête d'un chien" width="1200" height="800" loading="lazy" decoding="async"/>
+  <div class="c-voile">
+    <div class="env">
+      <div class="etiq">Prendre rendez-vous</div>
+      <a class="c-tel" href="tel:+33557000006">05 57 00 00 06</a>
+      <p class="c-note">En consultation la journée. Laissez le nom de l'animal, son âge et ce que vous observez : je rappelle entre 19 h et 20 h.</p>
       <div class="zone">
-        <div><b>Zone de déplacement</b></div>
-        <div>Étauliers, Braud-et-Saint-Louis, Saint-Ciers</div>
-        <div>Blaye, Cars, Berson, Cartelègue, Anglade</div>
-        <div>Au-delà de 25 km, nous en parlons au téléphone</div>
+        <span><b>Cabinet Léa Martin</b> — 5 rue des Vétérinaires, 33820 Étauliers</span>
+        <span>Étauliers, Braud, Saint-Ciers, Blaye, Cars, Berson, Cartelègue</span>
       </div>
     </div>
   </div>
@@ -402,7 +386,6 @@ footer a{color:var(--sur-sombre-accent)}
     Site de démonstration réalisé par <a href="https://novaspot.fr" target="_blank" rel="noopener">NovaSpot</a>. Informations fictives.
   </div>
 </footer>
-
 
 <script>
 (function(){
