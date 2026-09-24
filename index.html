@@ -84,39 +84,39 @@ img{max-width:100%;display:block}
 .demo a{color:var(--sur-bois);font-weight:600}
 .demo b{color:var(--sur-bois)}
 
-.barre{position:absolute;top:0;left:0;right:0;z-index:20;background:rgba(24,19,14,.62);padding-block:.9rem}
+.barre{position:sticky;top:0;z-index:20;background:var(--paille);border-bottom:1px solid var(--trait);padding-block:.8rem}
 .b-in{display:flex;align-items:center;gap:1.5rem;min-height:2.6rem}
-.b-marque{font-family:'Newsreader',serif;font-size:1.3rem;color:#F6F2EA;text-decoration:none;line-height:1.05;flex-shrink:0}
+.b-marque{font-family:'Newsreader',serif;font-size:1.3rem;color:var(--encre);text-decoration:none;line-height:1.05;flex-shrink:0}
 .b-marque small{display:block;font-family:'Public Sans',sans-serif;font-size:.56rem;font-weight:600;
-  letter-spacing:.24em;text-transform:uppercase;color:var(--sur-photo-doux);margin-top:.2rem}
+  letter-spacing:.24em;text-transform:uppercase;color:var(--taupe);margin-top:.2rem}
 .b-liens{display:flex;gap:1.6rem;margin-left:auto}
-.b-liens a{font-size:.72rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--sur-photo-doux);
+.b-liens a{font-size:.72rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--encre-doux);
   text-decoration:none;padding-block:.3rem;border-bottom:1px solid transparent}
-.b-liens a:hover{color:#F6F2EA;border-bottom-color:#F6F2EA}
-.b-tel{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--sauge-photo);
-  color:#0B1C13;text-decoration:none;padding:.78rem 1.25rem;white-space:nowrap;border-radius:3px}
-.b-tel:hover{background:#F6F2EA}
+.b-liens a:hover{color:var(--encre);border-bottom-color:var(--encre)}
+.b-tel{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:var(--sauge);
+  color:var(--sur-sauge);text-decoration:none;padding:.78rem 1.25rem;white-space:nowrap;border-radius:3px}
+.b-tel:hover{opacity:.85}
 .b-court{display:none}
 @media(max-width:940px){.b-liens{display:none}.b-long{display:none}.b-court{display:inline}}
 @media(max-width:520px){.env{padding-inline:1.2rem}.b-in{gap:.7rem}.b-marque{font-size:1.1rem}.b-tel{padding:.66rem 1rem}}
 
-/* --- ouverture --- */
-.ouverture{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
-.ouverture > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.ouv-txt{position:relative;z-index:2;width:100%;padding-block:4.5rem 4.5rem;
-  background:linear-gradient(to top,rgba(24,19,14,.90),rgba(24,19,14,.70))}
-.ouv-txt .etiq{color:var(--sauge-photo)}
-.ouverture h1{font-size:clamp(2.1rem,5vw,3.9rem);color:var(--sur-photo);max-width:19ch;margin-top:1rem;
-  line-height:1.1;font-weight:300}
-.ouverture h1 em{font-style:italic}
-.ouv-sous{color:var(--sur-photo-doux);margin-top:1.2rem;max-width:50ch;font-size:1rem}
-.action{display:inline-block;margin-top:1.8rem;font-size:.72rem;font-weight:600;letter-spacing:.12em;
-  text-transform:uppercase;background:var(--sauge-photo);color:#0B1C13;text-decoration:none;padding:1rem 1.8rem;border-radius:3px}
-.action:hover{background:#F6F2EA}
-.ouv-pied{display:flex;flex-wrap:wrap;gap:.4rem 2.4rem;margin-top:2rem;padding-top:1.2rem;
-  border-top:1px solid rgba(246,242,234,.3);font-size:.83rem;color:var(--sur-photo-doux)}
-.ouv-pied b{color:var(--sur-photo);font-weight:600}
-@media(max-width:700px){.ouverture{min-height:88svh}.ouv-txt{padding-block:3.2rem 3rem}}
+/* --- ouverture : deux colonnes cote a cote, jamais de texte pose
+       sur la photo. Le ton d'un cabinet, pas celui d'une affiche. --- */
+.cabinet{border-bottom:1px solid var(--trait)}
+.cabinet .env{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(2rem,5vw,4.5rem);
+  align-items:center;padding-block:clamp(2.6rem,6vw,4.6rem)}
+.cabinet .etiq{display:block;margin-bottom:1.2rem}
+.cabinet h1{font-size:clamp(1.9rem,4.4vw,3.4rem);line-height:1.1;font-weight:300;max-width:18ch}
+.cabinet h1 em{font-style:italic}
+.cab-sous{margin-top:1.2rem;max-width:44ch;font-size:1rem}
+.action{display:inline-block;margin-top:1.6rem;font-size:.72rem;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;background:var(--sauge);color:var(--sur-sauge);text-decoration:none;padding:1rem 1.8rem;border-radius:3px}
+.action:hover{opacity:.85}
+.cab-pied{display:flex;flex-wrap:wrap;gap:.4rem 2.2rem;margin-top:1.8rem;padding-top:1.1rem;
+  border-top:1px solid var(--trait);font-size:.84rem;color:var(--taupe)}
+.cab-pied b{color:var(--encre);font-weight:600}
+.cab-photo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+@media(max-width:880px){.cabinet .env{grid-template-columns:1fr}.cab-photo{order:-1}.cab-photo img{aspect-ratio:16/10}}
 
 .sect{padding-block:4.6rem}
 h2{font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1.14;margin-top:.7rem;font-weight:300}
@@ -202,8 +202,8 @@ footer{background:var(--paille);color:var(--taupe);font-size:.76rem;padding-bloc
 footer a{color:var(--encre)}
 
 .b-theme{display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;padding:0;
-  flex-shrink:0;cursor:pointer;background:none;color:var(--sur-photo-doux);border:1px solid currentColor;border-radius:99px;opacity:.85}
-.b-theme:hover{opacity:1;color:var(--sur-photo)}
+  flex-shrink:0;cursor:pointer;background:none;color:var(--taupe);border:1px solid currentColor;border-radius:99px;opacity:.8}
+.b-theme:hover{opacity:1;color:var(--encre)}
 
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
@@ -212,32 +212,35 @@ footer a{color:var(--encre)}
 
 <div class="demo"><b>Exemple</b> — site de démonstration réalisé par NovaSpot · <a href="https://novaspot.fr" target="_blank" rel="noopener">novaspot.fr</a></div>
 
-<header class="ouverture" id="haut">
-  <img src="/img/o-mains.jpg" alt="Mains posées sur le dos d'un chien" width="1600" height="1067" fetchpriority="high"/>
-  <nav class="barre" aria-label="Accès rapide">
-    <div class="env b-in">
-      <a class="b-marque" href="#haut">Léa Martin<small>Ostéopathie animale</small></a>
-      <div class="b-liens">
-        <a href="#limite">Ostéo ou vétérinaire</a>
-        <a href="#pratique">La séance</a>
-        <a href="#avis">Avis</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <button class="b-theme" type="button" aria-label="Passer en thème sombre"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"></svg></button>
-      <a class="b-tel" href="tel:+33557000006"><span class="b-long">05 57 00 00 06</span><span class="b-court">Appeler</span></a>
+<nav class="barre" aria-label="Accès rapide">
+  <div class="env b-in">
+    <a class="b-marque" href="#haut">Léa Martin<small>Ostéopathie animale</small></a>
+    <div class="b-liens">
+      <a href="#limite">Ostéo ou vétérinaire</a>
+      <a href="#pratique">La séance</a>
+      <a href="#avis">Avis</a>
+      <a href="#contact">Contact</a>
     </div>
-  </nav>
-  <div class="ouv-txt">
-    <div class="env">
-      <div class="etiq">Chiens · Chats · Chevaux · NAC · Étauliers</div>
+    <button class="b-theme" type="button" aria-label="Passer en thème sombre"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"></svg></button>
+    <a class="b-tel" href="tel:+33557000006"><span class="b-long">05 57 00 00 06</span><span class="b-court">Appeler</span></a>
+  </div>
+</nav>
+
+<header class="cabinet" id="haut">
+  <div class="env">
+    <div>
+      <span class="etiq">Chiens · Chats · Chevaux · NAC · Étauliers</span>
       <h1>L'ostéopathie ne remplace pas le vétérinaire. <em>Voilà où est la limite.</em></h1>
-      <p class="ouv-sous">Je vous renvoie chez le vétérinaire une fois sur cinq. C'est un chiffre que peu de confrères affichent, et pourtant c'est le cœur du métier.</p>
+      <p class="cab-sous">Je vous renvoie chez le vétérinaire une fois sur cinq. C'est un chiffre que peu de confrères affichent, et pourtant c'est le cœur du métier.</p>
       <a class="action" href="#contact">Prendre rendez-vous</a>
-      <div class="ouv-pied">
+      <div class="cab-pied">
         <span><b>Léa Martin</b> · diplômée d'un centre agréé</span>
         <span><b>5,0</b> ★★★★★ · 41 avis</span>
       </div>
     </div>
+    <figure class="cab-photo">
+      <img src="/img/o-mains.jpg" alt="Mains posées sur le dos d'un chien" width="1600" height="1067" fetchpriority="high"/>
+    </figure>
   </div>
 </header>
 
