@@ -71,8 +71,11 @@
 
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:4rem}
+/* Base de lecture : 1rem = 17 px, texte courant a 16 px. Les clients de ces
+   artisans lisent souvent sur telephone, et pas tous avec de bons yeux. */
+html{font-size:106.25%}
 body{background:var(--paille);color:var(--encre-doux);font-family:'Public Sans',system-ui,sans-serif;
-  font-size:15px;line-height:1.64;-webkit-font-smoothing:antialiased}
+  font-size:16px;line-height:1.64;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:'Newsreader',Georgia,serif;color:var(--encre);font-weight:400;letter-spacing:-.005em}
 a{color:var(--encre)}
 :focus-visible{outline:2px solid var(--focus);outline-offset:3px}
@@ -139,13 +142,18 @@ h2{font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1.14;margin-top:.7rem;font-w
 @media(max-width:760px){.plateaux{grid-template-columns:1fr;gap:2rem}.cote{padding:0}
   .cote:first-child{border-right:0;border-bottom:1px solid var(--trait);padding-bottom:1.6rem}}
 
-/* --- les patients, en bande --- */
-.patients{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--trait)}
-.patients figure{margin:0;position:relative;background:var(--paille)}
-.patients img{width:100%;height:clamp(210px,27vw,340px);object-fit:cover}
-.patients figcaption{position:absolute;left:0;bottom:0;background:rgba(24,19,14,.88);color:#F6F2EA;
-  font-size:.72rem;font-weight:600;letter-spacing:.06em;padding:.55rem 1rem}
-@media(max-width:760px){.patients{grid-template-columns:1fr 1fr}.patients figure:nth-child(3){display:none}}
+/* --- qui je recois : le cheval en grand, les trois especes en liste --- */
+.especes{border-bottom:1px solid var(--trait)}
+.especes .env{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:3.4rem;align-items:center}
+.esp-grand{margin:0}
+.esp-grand img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 40%}
+.esp-liste{list-style:none;margin:1.6rem 0 0;padding:0}
+.esp-liste li{display:grid;grid-template-columns:92px minmax(0,1fr);gap:1.2rem;align-items:start;padding-block:1.2rem;border-top:1px solid var(--trait)}
+.esp-liste li > div:only-child{grid-column:1/-1}
+.esp-liste img{width:92px;height:auto;aspect-ratio:1;object-fit:cover}
+.esp-liste h3{font-size:1.25rem;line-height:1.2}
+.esp-liste p{margin-top:.35rem;font-size:.97rem}
+@media(max-width:880px){.especes .env{grid-template-columns:1fr;gap:2rem}.esp-grand img{aspect-ratio:16/10;object-position:50% 34%}}
 
 /* --- seance et tarifs cote a cote --- */
 .pratique .env{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:3.4rem;align-items:start}
@@ -283,11 +291,28 @@ footer a{color:var(--encre)}
   </div>
 </section>
 
-<div class="patients">
-  <figure><img src="/img/o-cheval.jpg" alt="Cheval à l'écurie" width="1200" height="1800" loading="lazy" decoding="async"/><figcaption>Chevaux, à domicile</figcaption></figure>
-  <figure><img src="/img/o-chat.jpg" alt="Chat âgé endormi sur une chaise" width="1200" height="1798" loading="lazy" decoding="async"/><figcaption>Chats âgés</figcaption></figure>
-  <figure><img src="/img/o-genoux.jpg" alt="Petit chien tenu sur les genoux" width="1200" height="1800" loading="lazy" decoding="async"/><figcaption>Chiens et NAC</figcaption></figure>
-</div>
+<section class="sect especes" id="especes">
+  <div class="env">
+    <figure class="esp-grand"><img src="/img/o-cheval.jpg" alt="Cheval dans son box, à l'écurie" width="1200" height="1800" loading="lazy" decoding="async"/></figure>
+    <div>
+      <div class="etiq">Qui je reçois</div>
+      <h2>Chaque animal a sa façon de venir</h2>
+      <ul class="esp-liste">
+        <li>
+          <div><h3>Chevaux et poneys</h3><p>Toujours à domicile, à l'écurie ou au pré. Prévoyez un endroit calme et quelqu'un pour tenir la longe.</p></div>
+        </li>
+        <li>
+          <img src="/img/o-chat.jpg" alt="Chat âgé endormi sur une chaise" width="1200" height="1798" loading="lazy" decoding="async"/>
+          <div><h3>Chats</h3><p>Au cabinet, ou chez vous s'il déteste la caisse. Il sort quand il veut : je ne le tire jamais dehors.</p></div>
+        </li>
+        <li>
+          <img src="/img/o-genoux.jpg" alt="Petit chien tenu sur les genoux" width="1200" height="1800" loading="lazy" decoding="async"/>
+          <div><h3>Chiens et NAC</h3><p>Au cabinet ou à domicile. Les plus petits restent sur les genoux de leur propriétaire toute la séance.</p></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
 
 <section class="sect pratique" id="pratique">
   <div class="env">
