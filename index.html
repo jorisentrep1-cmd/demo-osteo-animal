@@ -5,12 +5,27 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Cabinet Léa Martin — Ostéopathie animale à Étauliers</title>
 <meta name="description" content="Ostéopathie animale en Haute-Gironde : chiens, chats, chevaux, NAC. Ce qui relève de l'ostéopathie et ce qui relève du vétérinaire. Tarifs affichés."/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="fr_FR"/>
+<meta property="og:url" content="https://demo-osteo-animal.novaspot.fr/"/>
+<meta property="og:title" content="Cabinet Léa Martin — Ostéopathie animale à Étauliers"/>
+<meta property="og:description" content="Ostéopathie animale en Haute-Gironde : chiens, chats, chevaux, NAC. Ce qui relève de l'ostéopathie et ce qui relève du vétérinaire. Tarifs affichés."/>
+<meta property="og:image" content="https://novaspot.fr/img/demo-osteo-animal-v2.jpg"/>
+<meta property="og:image:width" content="800"/>
+<meta property="og:image:height" content="500"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <meta name="robots" content="noindex,nofollow"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,300&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
 <script>try{var t=localStorage.getItem("ns-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <style>
+/* Polices servies par le site lui-meme (sous-ensemble latin) : aucune requete vers Google. */
+@font-face{font-family:'Newsreader';font-style:italic;font-weight:300;font-display:swap;src:url(/fonts/newsreader-italic-2d71b5e8.woff2) format('woff2')}
+@font-face{font-family:'Newsreader';font-style:normal;font-weight:300;font-display:swap;src:url(/fonts/newsreader-4aa9bb70.woff2) format('woff2')}
+@font-face{font-family:'Newsreader';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/newsreader-4aa9bb70.woff2) format('woff2')}
+@font-face{font-family:'Newsreader';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/newsreader-4aa9bb70.woff2) format('woff2')}
+@font-face{font-family:'Public Sans';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/public-sans-cd00287f.woff2) format('woff2')}
+@font-face{font-family:'Public Sans';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/public-sans-cd00287f.woff2) format('woff2')}
+@font-face{font-family:'Public Sans';font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/public-sans-cd00287f.woff2) format('woff2')}
+
 /* ---------------------------------------------------------------
    Registre releve sur les cabinets veterinaires les mieux notes :
    couleurs apaisantes, imagerie emotionnelle, prise de rendez-vous
@@ -293,7 +308,7 @@ footer a{color:var(--encre)}
 
 <section class="sect especes" id="especes">
   <div class="env">
-    <figure class="esp-grand"><img src="/img/o-cheval.jpg" alt="Cheval dans son box, à l'écurie" width="1200" height="1800" loading="lazy" decoding="async"/></figure>
+    <figure class="esp-grand"><img src="/img/o-cheval.jpg" srcset="/img/o-cheval-700.jpg 700w, /img/o-cheval.jpg 1200w" sizes="(max-width:700px) 92vw, 491px" alt="Cheval dans son box, à l'écurie" width="1200" height="1800" loading="lazy" decoding="async"/></figure>
     <div>
       <div class="etiq">Qui je reçois</div>
       <h2>Chaque animal a sa façon de venir</h2>
@@ -302,11 +317,11 @@ footer a{color:var(--encre)}
           <div><h3>Chevaux et poneys</h3><p>Toujours à domicile, à l'écurie ou au pré. Prévoyez un endroit calme et quelqu'un pour tenir la longe.</p></div>
         </li>
         <li>
-          <img src="/img/o-chat.jpg" alt="Chat âgé endormi sur une chaise" width="1200" height="1798" loading="lazy" decoding="async"/>
+          <img src="/img/o-chat.jpg" srcset="/img/o-chat-300.jpg 300w, /img/o-chat.jpg 1200w" sizes="92px" alt="Chat âgé endormi sur une chaise" width="1200" height="1798" loading="lazy" decoding="async"/>
           <div><h3>Chats</h3><p>Au cabinet, ou chez vous s'il déteste la caisse. Il sort quand il veut : je ne le tire jamais dehors.</p></div>
         </li>
         <li>
-          <img src="/img/o-genoux.jpg" alt="Petit chien tenu sur les genoux" width="1200" height="1800" loading="lazy" decoding="async"/>
+          <img src="/img/o-genoux.jpg" srcset="/img/o-genoux-300.jpg 300w, /img/o-genoux.jpg 1200w" sizes="92px" alt="Petit chien tenu sur les genoux" width="1200" height="1800" loading="lazy" decoding="async"/>
           <div><h3>Chiens et NAC</h3><p>Au cabinet ou à domicile. Les plus petits restent sur les genoux de leur propriétaire toute la séance.</p></div>
         </li>
       </ul>
@@ -321,30 +336,30 @@ footer a{color:var(--encre)}
       <h2>Comment se passe une séance</h2>
       <p class="intro">Ni manipulation brutale, ni animal maintenu de force.</p>
       <div class="etape">
-        <div class="e-heure">0 – 10 min</div>
+        <div class="e-heure">0 – 10 min</div>
         <div><div class="e-titre">On parle, l'animal explore</div><p class="e-txt">Vous racontez ce que vous observez pendant qu'il fait le tour de la pièce. Je le regarde bouger sans le toucher.</p></div>
       </div>
       <div class="etape">
-        <div class="e-heure">10 – 20 min</div>
+        <div class="e-heure">10 – 20 min</div>
         <div><div class="e-titre">Examen en mouvement</div><p class="e-txt">Marche, trot, montée et descente. C'est souvent là que je vois, avant de poser les mains.</p></div>
       </div>
       <div class="etape">
-        <div class="e-heure">20 – 40 min</div>
+        <div class="e-heure">20 – 40 min</div>
         <div><div class="e-titre">Le travail manuel</div><p class="e-txt">Jamais de contention. Si l'animal se dérobe, on s'arrête et on reprend autrement. Vous restez à côté.</p></div>
       </div>
       <div class="etape">
-        <div class="e-heure">40 – 45 min</div>
-        <div><div class="e-titre">Ce que vous faites après</div><p class="e-txt">Repos relatif 48 h. Je vous montre deux gestes à faire à la maison et je vous dis s'il faut une deuxième séance. Souvent, non.</p></div>
+        <div class="e-heure">40 – 45 min</div>
+        <div><div class="e-titre">Ce que vous faites après</div><p class="e-txt">Repos relatif 48 h. Je vous montre deux gestes à faire à la maison et je vous dis s'il faut une deuxième séance. Souvent, non.</p></div>
       </div>
     </div>
     <div>
       <div class="etiq">Tarifs</div>
       <h2>Ce que coûte une séance</h2>
-      <div class="lt"><div><span class="lt-nom">Chien, chat</span><span class="lt-det">Bilan complet et séance, 45 minutes</span></div><div class="lt-prix">60 €</div></div>
-      <div class="lt"><div><span class="lt-nom">Cheval, poney</span><span class="lt-det">Examen monté si besoin, 1 heure</span></div><div class="lt-prix">95 €</div></div>
-      <div class="lt"><div><span class="lt-nom">NAC</span><span class="lt-det">Lapin, furet, rongeurs, 30 minutes</span></div><div class="lt-prix">55 €</div></div>
-      <div class="lt"><div><span class="lt-nom">Bilan post-traumatique</span><span class="lt-det">En relais du vétérinaire</span></div><div class="lt-prix">70 €</div></div>
-      <div class="lt"><div><span class="lt-nom">Déplacement à domicile</span><span class="lt-det">Blayais et Haute-Gironde</span></div><div class="lt-prix">+ 20 €</div></div>
+      <div class="lt"><div><span class="lt-nom">Chien, chat</span><span class="lt-det">Bilan complet et séance, 45 minutes</span></div><div class="lt-prix">60 €</div></div>
+      <div class="lt"><div><span class="lt-nom">Cheval, poney</span><span class="lt-det">Examen monté si besoin, 1 heure</span></div><div class="lt-prix">95 €</div></div>
+      <div class="lt"><div><span class="lt-nom">NAC</span><span class="lt-det">Lapin, furet, rongeurs, 30 minutes</span></div><div class="lt-prix">55 €</div></div>
+      <div class="lt"><div><span class="lt-nom">Bilan post-traumatique</span><span class="lt-det">En relais du vétérinaire</span></div><div class="lt-prix">70 €</div></div>
+      <div class="lt"><div><span class="lt-nom">Déplacement à domicile</span><span class="lt-det">Blayais et Haute-Gironde</span></div><div class="lt-prix">+ 20 €</div></div>
       <p class="garantie">Si j'interromps la séance parce que le cas relève du vétérinaire, rien n'est facturé : ni la consultation, ni le déplacement. C'est le cas environ une fois sur vingt.</p>
     </div>
   </div>
@@ -400,7 +415,7 @@ footer a{color:var(--encre)}
     <div class="env">
       <div class="etiq">Prendre rendez-vous</div>
       <a class="c-tel" href="tel:+33557000006">05 57 00 00 06</a>
-      <p class="c-note">En consultation la journée. Laissez le nom de l'animal, son âge et ce que vous observez : je rappelle entre 19 h et 20 h.</p>
+      <p class="c-note">En consultation la journée. Laissez le nom de l'animal, son âge et ce que vous observez : je rappelle entre 19 h et 20 h.</p>
       <div class="zone">
         <span><b>Cabinet Léa Martin</b> — 3 chemin du Moulin, 33820 Étauliers</span>
         <span>Étauliers, Braud, Saint-Ciers, Blaye, Cars, Berson, Cartelègue</span>
@@ -502,6 +517,23 @@ footer a{color:var(--encre)}
   addEventListener('load', planifier);
   reperer();
 })();
+</script>
+<script>
+/* Demo : le bouton d'avis pointe vers une fiche Google qui n'existe pas encore.
+   Sur le site d'un client, PLACE_ID_DU_CLIENT est remplace par sa vraie fiche
+   et ce script ne trouve plus rien a faire. */
+document.querySelectorAll('a[href*="PLACE_ID_DU_CLIENT"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    var boite = a.parentNode, n = boite.querySelector('.note-demo');
+    if(n) return;
+    n = document.createElement('p');
+    n.className = 'note-demo'; n.setAttribute('role', 'status');
+    n.style.cssText = 'flex-basis:100%;width:100%;margin:.9rem 0 0;font-size:.92rem;line-height:1.5;color:inherit;opacity:1';
+    n.textContent = 'Exemple\u00a0: sur votre site, ce bouton ouvre directement votre fiche Google, prête à recevoir l\'avis.';
+    boite.appendChild(n);
+  });
+});
 </script>
 </body>
 </html>
